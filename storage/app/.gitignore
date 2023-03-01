@@ -1,0 +1,6 @@
+admins/
+parent-categories/
+child-categories/
+products/
+carousel-banners/
+!.gitignore

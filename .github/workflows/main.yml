@@ -1,0 +1,22 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  Upload-to-SFTP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: 📂 SFTP uploader 
+        uses: wangyucode/sftp-upload-action@v1.4.8
+        with:
+          host: ${{ secrets.FTP_SERVER }}         
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          dryRun: false
+          forceUpload: true 
+          localDir: './'
+          remoteDir: '/var/www/ecommerce.codewoofer.com/public_html'
+          exclude: '.git*,.DS_Store'

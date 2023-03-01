@@ -1,0 +1,119 @@
+@extends('admin.layouts.app')
+
+@section('panel-header')
+    <div>
+        <h1 class="panel-title">Edit Banner</h1>
+        <ul class="breadcrumb">
+            <li><a href="{{ route('admin.view.dashboard') }}">Admin</a></li>
+            <li><i data-feather="chevron-right"></i></li>
+            <li><a href="{{ route('admin.view.carousel.banner.list') }}">Carousel Banner</a></li>
+            <li><i data-feather="chevron-right"></i></li>
+            <li><a href="{{ route('admin.view.carousel.banner.update', ['id' => $carousel_banner->id]) }}">Edit Banner</a>
+            </li>
+        </ul>
+    </div>
+@endsection
+
+@section('panel-body')
+    <form action="{{ route('admin.handle.carousel.banner.update', ['id' => $carousel_banner->id]) }}" method="POST"
+        enctype="multipart/form-data">
+        @csrf
+        <figure class="panel-card">
+            <div class="panel-card-header">
+                <div>
+                    <h1 class="panel-card-title">Update Information</h1>
+                    <p class="panel-card-description">Please fill the required fields</p>
+                </div>
+                <div>
+                    <button type="button" class="btn-danger-md" onclick="handleDelete()">Delete</button>
+                </div>
+            </div>
+            <div class="panel-card-body">
+                <div class="grid md:grid-cols-4 sm:grid-cols-1 md:gap-7 sm:gap-5">
+
+                    {{-- Name --}}
+                    <div class="flex flex-col md:col-span-2 sm:col-span-1">
+                        <label for="name" class="input-label">Name</label>
+                        <input type="text" name="name" value="{{ old('name', $carousel_banner->name) }}"
+                            class="input-box-md @error('name') input-invalid @enderror" placeholder="Enter name" required>
+                        @error('name')
+                            <span class="input-error">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    {{-- Link --}}
+                    <div class="flex flex-col md:col-span-2 sm:col-span-1">
+                        <label for="link" class="input-label">Link</label>
+                        <input type="url" name="link" value="{{ old('link', $carousel_banner->link) }}"
+                            class="input-box-md @error('link') input-invalid @enderror" placeholder="Enter link">
+                        @error('link')
+                            <span class="input-error">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    {{-- Summary --}}
+                    <div class="flex flex-col md:col-span-4 sm:col-span-1">
+                        <label for="summary" class="input-label">Summary</label>
+                        <input type="text" name="summary" value="{{ old('summary', $carousel_banner->summary) }}"
+                            class="input-box-md @error('summary') input-invalid @enderror" placeholder="Enter summary">
+                        @error('summary')
+                            <span class="input-error">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    {{-- Image --}}
+                    <div class="md:col-span-4 sm:col-span-1">
+                        <label for="image" class="input-label">Image (Format: png, jpg, jpeg, webp)</label>
+                        <div class="flex space-x-3 my-2">
+                            <div class="input-box-dragable">
+                                <input type="file" accept="image/jpeg, image/jpg, image/png, image/webp"
+                                    onchange="handleImagePreview(event)" name="image">
+                                <i data-feather="upload-cloud"></i>
+                                <span>Darg and Drop Image Files</span>
+                            </div>
+                            <img src="{{ is_null($carousel_banner->image) ? asset('admin/images/default-thumbnail.png') : asset('storage/' . $carousel_banner->image) }}"
+                                id="image" alt="image" class="input-thumbnail-preview">
+                        </div>
+                        @error('image')
+                            <span class="input-error">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel-card-footer">
+                <button type="submit" class="btn-primary-md md:w-fit sm:w-full">Save Changes</button>
+            </div>
+        </figure>
+    </form>
+@endsection
+
+@section('panel-script')
+    <script>
+        document.getElementById('carousel-banner-tab').classList.add('active');
+        const handleImagePreview = (event) => {
+            if (event.target.files.length == 0) {
+                document.getElementById('image').src =
+                    "{{ is_null($carousel_banner->image) ? asset('admin/images/default-thumbnail.png') : asset('storage/' . $carousel_banner->image) }}";
+            } else {
+                document.getElementById('image').src = URL.createObjectURL(event.target.files[0])
+            }
+        }
+
+        const handleDelete = () => {
+            swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this banner!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        window.location =
+                            "{{ route('admin.handle.carousel.banner.delete', ['id' => $carousel_banner->id]) }}";
+                    }
+                });
+        }
+    </script>
+@endsection
