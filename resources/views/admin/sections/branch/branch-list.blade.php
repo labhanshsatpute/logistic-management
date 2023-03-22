@@ -2,13 +2,11 @@
 
 @section('panel-header')
     <div>
-        <h1 class="panel-title">Newsletter Mails</h1>
+        <h1 class="panel-title">Products</h1>
         <ul class="breadcrumb">
             <li><a href="{{ route('admin.view.dashboard') }}">Admin</a></li>
             <li><i data-feather="chevron-right"></i></li>
-            <li><a href="{{ route('admin.view.newsletter.publish') }}">Newsletter</a></li>
-            <li><i data-feather="chevron-right"></i></li>
-            <li><a href="{{ route('admin.view.newsletter.mail.list') }}">Newsletter Mails</a></li>
+            <li><a href="{{ route('admin.view.product.list') }}">Products</a></li>
         </ul>
     </div>
 @endsection
@@ -20,33 +18,55 @@
                 <h1 class="panel-card-title">All Records</h1>
                 <p class="panel-card-description">All available records </p>
             </div>
+            <div>
+                <a href="{{ route('admin.view.product.create') }}" class="btn-primary-md">Add Product</a>
+            </div>
         </div>
         <div class="panel-card-body">
             <div class="panel-card-table">
                 <table class="table">
                     <thead>
                         <th>ID</th>
-                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Type</th>
                         <th>Status</th>
                         <th>Action</th>
                     </thead>
                     <tbody>
-                        @foreach ($newsletter_mails as $newsletter_mail)
+                        @foreach ($branches as $branche)
                             <tr>
-                                <td>{{ $newsletter_mail->id }}</td>
-                                <td>{{ $newsletter_mail->email }}</td>
+                                <td>{{ $branche->id }}</td>
+                                <td>{{ $branche->name }}</td>
+                                <td>{{ $product->sku }}</td>
+                                <td>{{ $product->parent_category }} {{ $product->child_category }}</td>
+                                <td>{{env('APP_CURRENCY')}}{{ $product->price_discounted }} <span
+                                        class="line-through text-slate-600 ml-2">{{env('APP_CURRENCY')}}{{ $product->price_original }}</span></td>
+                                
                                 <td>
                                     <label class="relative cursor-pointer">
-                                        <input onchange="handleUpdateStatus({{$newsletter_mail->id}})" @checked($newsletter_mail->status) type="checkbox" class="sr-only peer">
+                                        <input onchange="handleUpdateStatus({{$product->id}})" @checked($product->status) type="checkbox" class="sr-only peer">
                                         <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2.5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-admin-ascent"></div>
                                     </label>
+                                </td>
+                                <td>
+                                    @switch($product->availability)
+                                        @case('In Stock')
+                                            <div class="table-status-success">{{ $product->availability }}</div>
+                                            @break
+                                        @case('Out of Stock')
+                                            <div class="table-status-warning">{{ $product->availability }}</div>
+                                            @break
+                                    @endswitch
                                 </td>
                                 <td>
                                     <div class="table-dropdown">
                                         <button>Options<i data-feather="chevron-down" class="ml-1 toggler-icon"></i></button>
                                         <div class="dropdown-menu">
                                             <ul>
-                                                <li><a href="javascript:handleDelete({{$newsletter_mail->id}});" class="dropdown-link-danger"><i data-feather="trash-2" class="mr-1"></i> Delete Email</a></li>
+                                                <li><a href="{{route('admin.view.product.update',['id' => $product->id])}}" class="dropdown-link-primary"><i data-feather="edit" class="mr-1"></i> Edit Product</a></li>
+                                                <li><a href="#" class="dropdown-link-primary"><i data-feather="copy" class="mr-1"></i> Duplicate Product</a></li>
+                                                <li><a href="javascript:handleProductDelete({{$product->id}});" class="dropdown-link-danger"><i data-feather="trash-2" class="mr-1"></i> Delete Product</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -66,10 +86,10 @@
 
 @section('panel-script')
     <script>
-        document.getElementById('newsletter-tab').classList.add('active');
+        document.getElementById('branch-tab').classList.add('active');
 
         const handleUpdateStatus = (id) => {
-            fetch("{{ route('admin.handle.newsletter.mail.status') }}", {
+            fetch("{{ route('admin.handle.branch.status') }}", {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -90,7 +110,7 @@
         const handleDelete = (id) => {
             swal({
                     title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this mail!",
+                    text: "Once deleted, you will not be able to recover this branch!",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
@@ -98,7 +118,7 @@
                 .then((willDelete) => {
                     if (willDelete) {
                         window.location =
-                            `{{ url('admin/newsletter/mail/delete')}}/${id}`;
+                            `{{ url('admin/branch/delete')}}/${id}`;
                     }
                 });
         }

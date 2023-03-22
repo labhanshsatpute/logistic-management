@@ -33,9 +33,9 @@ module.exports = {
         'admin-ascent-dark' : '#1b0156',
 
         'web-dominant': '#FFF',
-        'web-complement' : '#e0e7ff',
-        'web-ascent' : '#fb8500',
-        'web-ascent-dark' : '#fb5607',
+        'web-complement' : '#F5F5F5',
+        'web-ascent' : '#FF7D44',
+        'web-ascent-dark' : '#003B49',
       },
     },
     

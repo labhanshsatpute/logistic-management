@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,7 +11,7 @@
         zoom: 0.9;
     }
     html {
-      font-family: 'Inter', sans-serif;
+        font-family: 'DM Sans', sans-serif;
     }
     body {
         overflow-x: hidden;
@@ -25,14 +25,14 @@
 }
 
 /* Buttons (Start) */
-.btn-primary-sm {
-    @apply px-4 py-2 border rounded-md text-xs border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-ascent-dark active:bg-web-ascent-dark
+.btn-ascent-sm {
+    @apply px-4 py-2 border text-xs border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-ascent-dark hover:border-web-ascent-dark uppercase tracking-wider transition duration-300 ease-in-out hover:ease-in-out
 }
-.btn-primary-md {
-    @apply px-5 py-3 border rounded-md text-sm border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-ascent-dark active:bg-web-ascent-dark
+.btn-ascent-md {
+    @apply px-8 py-3 border text-sm border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-ascent-dark hover:border-web-ascent-dark uppercase tracking-wider transition duration-300 ease-in-out hover:ease-in-out
 }
-.btn-primary-lg {
-    @apply px-6 py-3 border rounded-md text-lg border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-ascent-dark active:bg-web-ascent-dark
+.btn-ascent-lg {
+    @apply px-6 py-3 border text-lg border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-ascent-dark hover:border-web-ascent-dark uppercase tracking-wider transition duration-300 ease-in-out hover:ease-in-out
 }
 .btn-secondary-sm {
     @apply px-4 py-2 border rounded-md text-xs border-web-ascent border-opacity-5 bg-web-ascent bg-opacity-10 font-medium text-web-ascent relative hover:bg-opacity-20 active:bg-opacity-20
@@ -42,15 +42,6 @@
 }
 .btn-secondary-lg {
     @apply px-6 py-3 border rounded-md text-lg border-web-ascent border-opacity-5 bg-web-ascent bg-opacity-10 font-medium text-web-ascent relative hover:bg-opacity-20 active:bg-opacity-20
-}
-.btn-danger-sm {
-    @apply px-4 py-2 border rounded-md text-xs border-red-500 bg-red-500 font-medium text-white relative hover:bg-red-700 active:bg-red-700
-}
-.btn-danger-md {
-    @apply px-5 py-3 border rounded-md text-sm border-red-500 bg-red-500 font-medium text-white relative hover:bg-red-700 active:bg-red-700
-}
-.btn-danger-lg {
-    @apply px-6 py-3 border rounded-md text-lg border-red-500 bg-red-500 font-medium text-white relative hover:bg-red-700 active:bg-red-700
 }
 button[disabled] {
     @apply opacity-70
@@ -119,52 +110,7 @@ input:read-only {
 /* Input (End) */
 
 
-/* Header (Start) */
-.header-icon-link {
-    @apply flex items-center justify-start space-x-3 relative w-fit
-}
-.header-icon-link div:first-child {
-    @apply h-11 w-11 bg-web-ascent bg-opacity-10 flex items-center justify-center rounded-lg relative transition duration-300 ease-in-out
-}
-.header-icon-link div:first-child span {
-    @apply absolute -top-1 -right-1 h-[18px] w-[18px] bg-web-ascent text-[0.65rem] font-medium flex items-center justify-center text-white rounded-full shadow-md
-}
-.header-icon-link div:first-child svg {
-    @apply stroke-[2px] stroke-web-ascent h-5 w-5 transition duration-300 ease-in-out
-}
-.header-icon-link div:last-child {
-    @apply flex flex-col space-y-[1px]
-}
-.header-icon-link div:last-child p:first-child {
-    @apply font-semibold text-sm text-gray-800 transition duration-300 ease-in-out
-}
-.header-icon-link div:last-child p:last-child {
-    @apply font-normal text-[0.7rem] text-gray-600
-}
 
-.header-icon-link:hover div:first-child,
-.header-icon-link.active div:first-child {
-    @apply bg-web-ascent-dark transition duration-300 ease-in-out
-}
-.header-icon-link:hover div:first-child svg,
-.header-icon-link.active div:first-child svg {
-    @apply stroke-white transition duration-300 ease-in-out
-}
-.header-icon-link:hover div:last-child p:first-child,
-.header-icon-link.active div:last-child p:first-child {
-    @apply text-web-ascent-dark transition duration-300 ease-in-out
-}
-
-.dropdown .dropdown-content {
-    @apply absolute border top-full mt-3 right-0 z-50 w-fit origin-top-right rounded-lg bg-white shadow-lg px-5 py-4 flex flex-col space-y-3
-}
-.dropdown .dropdown-content a {
-    @apply font-medium text-gray-700 hover:text-web-ascent-dark text-sm whitespace-nowrap flex items-center justify-start transition duration-200 ease-in-out hover:ease-in-out
-}
-.header-link {
-    @apply font-medium text-gray-700 hover:text-web-ascent-dark text-sm whitespace-nowrap flex items-center justify-start transition duration-200 ease-in-out hover:ease-in-out px-3 py-4
-}
-/* Header (End) */
 
 /* Footer (Start) */
 .footer-link {

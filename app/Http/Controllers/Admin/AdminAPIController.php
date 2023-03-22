@@ -206,4 +206,9 @@ class AdminAPIController extends Controller implements AdminAPI
         }
     }
     
+
+    public function handleBranchStatus(Request $request)
+    {
+        # code...
+    }
 }

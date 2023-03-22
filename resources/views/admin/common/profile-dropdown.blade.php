@@ -47,7 +47,7 @@
             </div>
         </button>
 
-        <form action="{{route('logout')}}" method="post" id="logout-form" hidden>@csrf</form>
+        <form action="{{route('admin.handle.logout')}}" method="post" id="logout-form" hidden>@csrf</form>
 
         <hr />
 
