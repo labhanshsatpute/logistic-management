@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('web/css/app.css')}}">
 
     {{-- Title --}}
-    <title>{{env('APP_NAME')}} </title>
+    <title>{{env('APP_NAME')}} | Deliviring With Security </title>
 
     @yield('web-head')
 
@@ -35,6 +35,7 @@
 
     {{-- Script --}}
     <script src="{{asset('web/js/app.js')}}"></script>
+    <script src="{{asset('web/js/swiper.min.js')}}"></script>
 
     @yield('web-script')
 

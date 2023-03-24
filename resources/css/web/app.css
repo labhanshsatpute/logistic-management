@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
+@import "./pagination.css";
+@import "./swiper.css";
+@import "./animate.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,20 +24,33 @@
 
 @layer components {
     .container {
-        @apply sm:max-w-[26rem] md:max-w-[94rem] md:px-2 sm:px-4 self-center;
+        @apply sm:max-w-[26rem] md:max-w-[86rem] md:px-2 sm:px-4 self-center;
     }  
 }
 
 /* Buttons (Start) */
 .btn-ascent-sm {
-    @apply px-4 py-2 border text-xs border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-ascent-dark hover:border-web-ascent-dark uppercase tracking-wider transition duration-300 ease-in-out hover:ease-in-out
+    @apply px-4 py-2 border text-xs border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-complement hover:border-web-complement hover:text-gray-600 uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
 }
 .btn-ascent-md {
-    @apply px-8 py-3 border text-sm border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-ascent-dark hover:border-web-ascent-dark uppercase tracking-wider transition duration-300 ease-in-out hover:ease-in-out
+    @apply px-8 py-3 border text-sm border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-complement hover:border-web-complement hover:text-gray-600 uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
 }
 .btn-ascent-lg {
-    @apply px-6 py-3 border text-lg border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-ascent-dark hover:border-web-ascent-dark uppercase tracking-wider transition duration-300 ease-in-out hover:ease-in-out
+    @apply px-10 py-4 border text-base border-web-ascent bg-web-ascent font-medium text-white relative hover:bg-web-complement hover:border-web-complement hover:text-gray-600 uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
 }
+.btn-ascent-link-lg {
+    @apply py-3 text-base font-medium text-web-ascent relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-web-ascent uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out hover:after:opacity-0 after:transition after:duration-500 after:ease-in-out hover:after:ease-in-out
+}
+.btn-ascent-dark-sm {
+    @apply px-4 py-2 border text-xs border-web-ascent-dark bg-web-ascent-dark font-medium text-white relative hover:bg-web-ascent hover:border-web-ascent uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
+}
+.btn-ascent-dark-md {
+    @apply px-8 py-3 border text-sm border-web-ascent-dark bg-web-ascent-dark font-medium text-white relative hover:bg-web-ascent hover:border-web-ascent uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
+}
+.btn-ascent-dark-lg {
+    @apply px-10 py-4 border text-base border-web-ascent-dark bg-web-ascent-dark font-medium text-white relative hover:bg-web-ascent hover:border-web-ascent uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
+}
+
 .btn-secondary-sm {
     @apply px-4 py-2 border rounded-md text-xs border-web-ascent border-opacity-5 bg-web-ascent bg-opacity-10 font-medium text-web-ascent relative hover:bg-opacity-20 active:bg-opacity-20
 }
@@ -117,15 +134,15 @@ input:read-only {
     @apply text-gray-700 hover:text-web-ascent-dark text-sm whitespace-nowrap flex items-center justify-start transition duration-200 ease-in-out hover:ease-in-out
 }
 .footer-social-media {
-    @apply h-11 w-11 bg-web-ascent bg-opacity-10 flex items-center justify-center rounded-lg relative transition duration-300 ease-in-out
+    @apply h-11 w-11 bg-web-ascent bg-opacity-10 flex items-center justify-center rounded-lg relative transition duration-500 ease-in-out
 }
 .footer-social-media svg {
-    @apply h-5 w-5 stroke-2 stroke-web-ascent transition duration-300 ease-in-out
+    @apply h-5 w-5 stroke-2 stroke-web-ascent transition duration-500 ease-in-out
 }
 .footer-social-media:hover {
-    @apply bg-web-ascent-dark transition duration-300 ease-in-out
+    @apply bg-web-ascent-dark transition duration-500 ease-in-out
 }
 .footer-social-media:hover svg {
-    @apply stroke-white transition duration-300 ease-in-out
+    @apply stroke-white transition duration-500 ease-in-out
 }
 /* Footer (End) */
