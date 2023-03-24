@@ -23,6 +23,8 @@
 
     @include('web.common.header')
 
+    @include('web.common.mobile-sidebar')
+
     {{-- Main (Start) --}}
     <main>
 
@@ -36,6 +38,21 @@
     {{-- Script --}}
     <script src="{{asset('web/js/app.js')}}"></script>
     <script src="{{asset('web/js/swiper.min.js')}}"></script>
+
+    <script>
+        const handleToggleSidebar = () => {
+            if (document.getElementById('sidebar').classList.contains('active')) {
+                document.getElementById('sidebar').classList.remove('active');
+                document.getElementById('sidebar-toggler-close').style.display = "none";
+                document.getElementById('sidebar-toggler-menu').style.display = "block";
+            }
+            else {
+                document.getElementById('sidebar').classList.add('active');
+                document.getElementById('sidebar-toggler-close').style.display = "block";
+                document.getElementById('sidebar-toggler-menu').style.display = "none";
+            }
+        }
+    </script>
 
     @yield('web-script')
 

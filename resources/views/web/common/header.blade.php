@@ -19,3 +19,19 @@
         </div>
     </nav>
 </header>
+
+<header class="relative z-50 top-0 shadow-lg bg-white border-b md:hidden sm:bloxk">
+    <nav>
+        <div class="container py-4">
+            <div class="flex items-center justify-between">
+                <a href="#">
+                    <img src="{{asset('web/images/logo.png')}}" alt="logo" class="h-[50px] w-auto">
+                </a>
+                <button class="px-1" onclick="handleToggleSidebar()">
+                    <i data-feather="x" class="h-8 w-8" id="sidebar-toggler-close" style="display: none;"></i>
+                    <i data-feather="menu" class="h-8 w-8" id="sidebar-toggler-menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>

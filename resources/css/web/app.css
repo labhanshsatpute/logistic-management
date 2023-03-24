@@ -129,20 +129,17 @@ input:read-only {
 
 
 
-/* Footer (Start) */
-.footer-link {
-    @apply text-gray-700 hover:text-web-ascent-dark text-sm whitespace-nowrap flex items-center justify-start transition duration-200 ease-in-out hover:ease-in-out
+/* Sidebar (Start) */
+
+.sidebar {
+    @apply min-h-[120vh] w-[100%] bg-white fixed z-40 overflow-y-auto shadow-lg border md:hidden sm:block
 }
-.footer-social-media {
-    @apply h-11 w-11 bg-web-ascent bg-opacity-10 flex items-center justify-center rounded-lg relative transition duration-500 ease-in-out
+.sidebar {
+    margin-left: -100%;
+    transition: 0.3s ease;
 }
-.footer-social-media svg {
-    @apply h-5 w-5 stroke-2 stroke-web-ascent transition duration-500 ease-in-out
+.sidebar.active {
+    margin-left: 0%;
+    transition: 0.3s ease;
 }
-.footer-social-media:hover {
-    @apply bg-web-ascent-dark transition duration-500 ease-in-out
-}
-.footer-social-media:hover svg {
-    @apply stroke-white transition duration-500 ease-in-out
-}
-/* Footer (End) */
+/* Sidebar (End) */
