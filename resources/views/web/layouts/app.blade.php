@@ -26,7 +26,7 @@
     @include('web.common.mobile-sidebar')
 
     {{-- Main (Start) --}}
-    <main>
+    <main class="md:pt-0 sm:pt-[82px]">
 
        @yield('web-section')
 

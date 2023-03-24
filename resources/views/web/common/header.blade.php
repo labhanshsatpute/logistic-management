@@ -1,4 +1,4 @@
-<header class="relative z-50 top-0 bg-white border-b md:block sm:hidden">
+<header class="relative z-50 top-0 bg-white border-b md:block sm:hidden" id="desktop-header">
     <nav>
         <div class="container py-4">
             <div class="flex items-center justify-between">
@@ -20,7 +20,7 @@
     </nav>
 </header>
 
-<header class="relative z-50 top-0 shadow-lg bg-white border-b md:hidden sm:bloxk">
+<header class="fixed w-full h-auto z-50 top-0 shadow-lg bg-white border-b md:hidden sm:bloxk" id="mobile-header">
     <nav>
         <div class="container py-4">
             <div class="flex items-center justify-between">

@@ -1,5 +1,5 @@
 <aside class="sidebar" id="sidebar">
-    <div class="p-7">
+    <div class="p-7 pt-[95px]">
         <ul class="flex flex-col justify-center">
             
             <li class="border-b">

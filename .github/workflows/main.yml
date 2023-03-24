@@ -18,5 +18,5 @@ jobs:
           dryRun: false
           forceUpload: true 
           localDir: './'
-          remoteDir: '/var/www/ecommerce.codewoofer.com/public_html'
+          remoteDir: '/var/www/logistic-management.labhansh.in//public_html'
           exclude: '.git*,.DS_Store'

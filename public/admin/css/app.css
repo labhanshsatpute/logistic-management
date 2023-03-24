@@ -2306,6 +2306,15 @@ main{
 .pb-3{
   padding-bottom: 0.75rem;
 }
+.pt-\[82px\]{
+  padding-top: 82px;
+}
+.pt-\[87px\]{
+  padding-top: 87px;
+}
+.pt-\[95px\]{
+  padding-top: 95px;
+}
 .text-left{
   text-align: left;
 }
@@ -3955,6 +3964,10 @@ table.dataTable thead th, table.dataTable thead td {
     padding: 1.75rem;
   }
 
+  .sm\:pt-\[82px\]{
+    padding-top: 82px;
+  }
+
   .sm\:text-center{
     text-align: center;
   }
@@ -4086,6 +4099,10 @@ table.dataTable thead th, table.dataTable thead td {
 
   .md\:p-10{
     padding: 2.5rem;
+  }
+
+  .md\:pt-0{
+    padding-top: 0px;
   }
 
   .md\:text-left{
