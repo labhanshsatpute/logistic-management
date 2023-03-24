@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('web/css/app.css')}}">
 
     {{-- Title --}}
-    <title>{{env('APP_NAME')}} | Deliviring With Security </title>
+    <title>{{env('APP_NAME')}} </title>
 
     @yield('web-head')
 
