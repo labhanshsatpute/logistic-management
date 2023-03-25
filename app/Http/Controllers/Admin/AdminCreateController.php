@@ -138,7 +138,7 @@ class AdminCreateController extends Controller implements AdminCreate
                 return redirect()->back()->with('message', [
                     'status' => 'success',
                     'title' => 'Branch Created',
-                    'description' => 'Admin access is successfully created.'
+                    'description' => 'Branch is successfully created.'
                 ]);
             } else {
                 return redirect()->back()->with('message', [
