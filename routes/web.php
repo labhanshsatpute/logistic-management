@@ -15,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'web.sections.main')->name('main');
 
+Route::get('/random',function() {
+    return rand(1111111111,9999999999);
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
