@@ -120,6 +120,7 @@ class AdminCreateController extends Controller implements AdminCreate
             return redirect()->back()->withErrors($validation)->withInput();
         }
         else {
+            
             $branch = new Branch();
             $branch->name = $request->input('name');
             $branch->email = $request->input('email');

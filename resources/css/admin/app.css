@@ -11,10 +11,11 @@
 
 @layer base {
     html {
-      font-family: 'Inter', sans-serif;
+        font-family: 'Inter', sans-serif;
     }
     body {
         overflow-x: hidden;
+        zoom: 90%;
     }
     main {
         @apply flex
@@ -84,6 +85,9 @@ button[disabled] {
 .input-label {
     @apply text-xs font-medium text-slate-800 mb-2 text-left
 }
+.input-label em {
+    @apply text-red-500
+}
 .input-error {
     @apply text-xs font-medium text-red-600 mt-2 text-left
 }
@@ -108,7 +112,7 @@ input:not(.peer)[type=checkbox]:checked {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
 }
 input:read-only {
-    @apply bg-slate-200
+    @apply outline-none cursor-default
 }
 .input-box-dragable {
     @apply relative h-[200px] flex flex-col space-y-3 justify-center items-center w-full border-2 border-slate-300 border-dashed rounded-md text-slate-600 font-medium text-sm
@@ -123,13 +127,31 @@ input:read-only {
 
 /* Alert Boxes (Start) */
 .alert-success-sm {
-    @apply p-3 bg-green-200 text-green-900 rounded flex items-center justify-center space-x-3
+    @apply py-2 px-3 bg-green-200 text-green-900 rounded flex items-center justify-center space-x-3 font-medium text-xs
 }
-.alert-success-md svg {
-    @apply h-4 w-4 stroke-2
+.alert-success-md {
+    @apply py-2 px-4 bg-green-200 text-green-900 rounded flex items-center justify-center space-x-3 font-medium text-sm
 }
-.alert-success-lg span {
-    @apply font-medium text-sm
+.alert-success-lg {
+    @apply py-2 px-5 bg-green-200 text-green-900 rounded flex items-center justify-center space-x-3 font-medium text-base
+}
+.alert-warning-sm {
+    @apply py-2 px-3 bg-yellow-200 text-yellow-900 rounded flex items-center justify-center space-x-3 font-medium text-xs
+}
+.alert-warning-md {
+    @apply py-2 px-4 bg-yellow-200 text-yellow-900 rounded flex items-center justify-center space-x-3 font-medium text-sm
+}
+.alert-warning-lg {
+    @apply py-2 px-5 bg-yellow-200 text-yellow-900 rounded flex items-center justify-center space-x-3 font-medium text-base
+}
+.alert-danger-sm {
+    @apply py-2 px-3 bg-red-200 text-red-900 rounded flex items-center justify-center space-x-3 font-medium text-xs
+}
+.alert-danger-md {
+    @apply py-2 px-4 bg-red-200 text-red-900 rounded flex items-center justify-center space-x-3 font-medium text-sm
+}
+.alert-danger-lg {
+    @apply py-2 px-5 bg-red-200 text-red-900 rounded flex items-center justify-center space-x-3 font-medium text-base
 }
 /* Alert Boxes (Start) */
 
@@ -160,14 +182,14 @@ input:read-only {
 
 /* Sidebar (Start) */
 aside#sidebar {
-    @apply md:relative sm:fixed md:w-[18%] sm:w-[100%] md:ml-[0%] sm:ml-[-100%] bg-white h-screen shadow-lg
+    @apply md:relative sm:fixed md:w-[19%] sm:w-[100%] md:ml-[0%] sm:ml-[-100%] bg-white h-screen shadow-lg transition duration-300 ease-in-out
 }
 aside#sidebar.active {
-    @apply md:relative sm:fixed md:w-[18%] sm:w-[100%] md:ml-[-18%] sm:ml-[0%] z-30
+    @apply md:relative sm:fixed md:w-[19%] sm:w-[100%] md:ml-[-19%] sm:ml-[0%] z-30 transition duration-300 ease-in-out
 }
 
 .sidebar-tab {
-    @apply text-sm font-medium text-slate-500 flex items-center justify-start space-x-3 tracking-wider
+    @apply text-sm font-medium text-slate-500 flex items-center justify-start space-x-3 tracking-wider whitespace-nowrap
 }
 .sidebar-tab.active {
     @apply text-admin-ascent
@@ -175,14 +197,17 @@ aside#sidebar.active {
 .sidebar-tab svg {
     @apply h-5 w-5
 }
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
 /* Sidebar (End) */
 
 /* Panel (Start) */
 section#panel-section {
-    @apply relative h-screen overflow-y-auto w-[100%] bg-slate-200
+    @apply relative h-[111vh] overflow-y-auto w-[100%] bg-slate-200
 }
 .panel-dark-background {
-    @apply h-[50vh] w-full fixed bg-slate-900
+    @apply h-[55vh] w-full absolute bg-slate-900 top-0
 }
 .panel-container {
     @apply relative md:p-10 sm:p-5 z-10 md:space-y-10 sm:space-y-7
@@ -206,7 +231,7 @@ section#panel-section {
     @apply bg-white border shadow-lg rounded-md overflow-visible h-fit
 }
 .panel-card-header {
-    @apply md:p-7 sm:p-5 bg-white flex items-center justify-between border-b rounded-t-md
+    @apply md:p-7 sm:p-5 bg-white flex md:items-center sm:items-start justify-between border-b rounded-t-md md:flex-row sm:flex-col md:space-y-0 sm:space-y-5
 }
 .panel-card-title {
     @apply text-lg font-semibold text-black
@@ -221,7 +246,7 @@ section#panel-section {
     @apply md:p-7 sm:p-5 bg-white border-t rounded-b-md
 }
 .panel-card-table {
-    @apply md:overflow-visible sm:overflow-auto
+    @apply overflow-auto
 }
 .panel-card-table table {
     @apply w-full border-collapse border
@@ -282,7 +307,7 @@ section#panel-section {
 
 /* Sweet Alerts (Start) */
 .swal-modal {
-    @apply rounded-md border shadow-lg shadow-[rgba(0,0,0,0.3)]
+    @apply rounded-md border shadow-lg shadow-gray-700
 }
 .swal-title {
     @apply text-2xl text-black font-semibold
@@ -310,7 +335,7 @@ section#panel-section {
 }
 /* Sweet Alerts (End) */
 
-/* Datatables (Start) */
+/* Datatables */
 table.dataTable thead th {
     font-weight: 600;
 }
@@ -342,8 +367,11 @@ table.dataTable thead th, table.dataTable thead td {
 #DataTables_Table_0_paginate .paginate_button {
     @apply px-4 py-2 text-xs bg-admin-ascent bg-opacity-70 font-medium text-white relative hover:bg-admin-ascent-dark active:bg-admin-ascent-dark cursor-pointer rounded
 }
+#DataTables_Table_0_paginate .paginate_button {
+    color: #fff !important;
+}
 #DataTables_Table_0_paginate .paginate_button.previous {
-    @apply rounded text-admin-ascent-dark
+    @apply rounded text-white
 }
 #DataTables_Table_0_paginate .paginate_button.disabled {
     @apply bg-opacity-20 cursor-default
@@ -355,9 +383,8 @@ table.dataTable thead th, table.dataTable thead td {
     color: #fff !important;
 }
 #DataTables_Table_0_paginate .paginate_button.next {
-    @apply rounded text-admin-ascent-dark
+    @apply rounded text-white
 }
 #DataTables_Table_0_wrapper table {
     @apply col-span-2
 }
-/* Datatables (End) */

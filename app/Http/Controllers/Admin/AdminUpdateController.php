@@ -201,8 +201,8 @@ class AdminUpdateController extends Controller implements AdminUpdate
     {
         $validation = Validator::make($request->all(),[
             'name' => ['required','string','min:1','max:250'],
-            'email' => ['required','string','min:1','max:250',Rule::unique('braches')->ignore($id,'id')],
-            'phone' => ['required','numeric',Rule::unique('braches')->ignore($id,'id')],
+            'email' => ['required','string','min:1','max:250',Rule::unique('branches')->ignore($id,'id')],
+            'phone' => ['required','numeric',Rule::unique('branches')->ignore($id,'id')],
             'street' => ['required','string','min:1','max:250'],
             'city' => ['required','string','min:1','max:250'],
             'pincode' => ['required','string','min:1','max:250'],

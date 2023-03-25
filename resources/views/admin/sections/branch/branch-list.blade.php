@@ -2,11 +2,11 @@
 
 @section('panel-header')
     <div>
-        <h1 class="panel-title">Products</h1>
+        <h1 class="panel-title">Branches</h1>
         <ul class="breadcrumb">
             <li><a href="{{ route('admin.view.dashboard') }}">Admin</a></li>
             <li><i data-feather="chevron-right"></i></li>
-            <li><a href="{{ route('admin.view.product.list') }}">Products</a></li>
+            <li><a href="{{ route('admin.view.branch.list') }}">Branches</a></li>
         </ul>
     </div>
 @endsection
@@ -15,11 +15,11 @@
     <figure class="panel-card">
         <div class="panel-card-header">
             <div>
-                <h1 class="panel-card-title">All Records</h1>
-                <p class="panel-card-description">All available records </p>
+                <h1 class="panel-card-title">Branches Offices</h1>
+                <p class="panel-card-description">All branch offices listed in website </p>
             </div>
             <div>
-                <a href="{{ route('admin.view.product.create') }}" class="btn-primary-md">Add Product</a>
+                <a href="{{ route('admin.view.branch.create') }}" class="btn-primary-md">Add Branch</a>
             </div>
         </div>
         <div class="panel-card-body">
@@ -34,39 +34,25 @@
                         <th>Action</th>
                     </thead>
                     <tbody>
-                        @foreach ($branches as $branche)
+                        @foreach ($branches as $branch)
                             <tr>
-                                <td>{{ $branche->id }}</td>
-                                <td>{{ $branche->name }}</td>
-                                <td>{{ $product->sku }}</td>
-                                <td>{{ $product->parent_category }} {{ $product->child_category }}</td>
-                                <td>{{env('APP_CURRENCY')}}{{ $product->price_discounted }} <span
-                                        class="line-through text-slate-600 ml-2">{{env('APP_CURRENCY')}}{{ $product->price_original }}</span></td>
-                                
+                                <td>{{ $branch->id }}</td>
+                                <td>{{ $branch->name }}</td>
+                                <td>{{ $branch->city }} - {{ $branch->state }} - {{ $branch->country }} </td>
+                                <td>{{ $branch->type }}</td>
                                 <td>
                                     <label class="relative cursor-pointer">
-                                        <input onchange="handleUpdateStatus({{$product->id}})" @checked($product->status) type="checkbox" class="sr-only peer">
+                                        <input onchange="handleUpdateStatus({{$branch->id}})" @checked($branch->status) type="checkbox" class="sr-only peer">
                                         <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2.5px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-admin-ascent"></div>
                                     </label>
-                                </td>
-                                <td>
-                                    @switch($product->availability)
-                                        @case('In Stock')
-                                            <div class="table-status-success">{{ $product->availability }}</div>
-                                            @break
-                                        @case('Out of Stock')
-                                            <div class="table-status-warning">{{ $product->availability }}</div>
-                                            @break
-                                    @endswitch
                                 </td>
                                 <td>
                                     <div class="table-dropdown">
                                         <button>Options<i data-feather="chevron-down" class="ml-1 toggler-icon"></i></button>
                                         <div class="dropdown-menu">
                                             <ul>
-                                                <li><a href="{{route('admin.view.product.update',['id' => $product->id])}}" class="dropdown-link-primary"><i data-feather="edit" class="mr-1"></i> Edit Product</a></li>
-                                                <li><a href="#" class="dropdown-link-primary"><i data-feather="copy" class="mr-1"></i> Duplicate Product</a></li>
-                                                <li><a href="javascript:handleProductDelete({{$product->id}});" class="dropdown-link-danger"><i data-feather="trash-2" class="mr-1"></i> Delete Product</a></li>
+                                                <li><a href="{{route('admin.view.branch.update',['id' => $branch->id])}}" class="dropdown-link-primary"><i data-feather="edit" class="mr-1"></i> Edit Branch</a></li>
+                                                <li><a href="javascript:handleDelete({{$branch->id}});" class="dropdown-link-danger"><i data-feather="trash-2" class="mr-1"></i> Delete Branch</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -76,10 +62,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-        
-        <div class="panel-card-footer">
-
         </div>
     </figure>
 @endsection

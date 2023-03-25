@@ -63,6 +63,9 @@ class AdminDeleteController extends Controller
     public function handleBranchDelete($id)
     {
         $branch = Branch::find($id);
+        if (!is_null($branch->profile)) {
+            Storage::delete($branch->profile);
+        }
         $branch->delete();
         return redirect()->route('admin.view.branch.list')->with('message',[
             'status' => 'success',
