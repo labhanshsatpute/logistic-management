@@ -13,7 +13,7 @@
                     <div class="absolute h-[650px] w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('web/images/home-front-banner/banner-1.jpg')}}')">
 
                     </div>
-                    <div class="relative h-[650px] flex items-center justify-start w-full bg-cover bg-center bg-no-repeat md:backdrop-blur-0 sm:backdrop-blur-sm">
+                    <div class="relative h-[650px] flex items-center justify-start w-full bg-cover bg-center bg-no-repeat md:bg-transparent sm:bg-[rgba(0,59,73,0.4)]">
                         <div class="container mt-10">
                             <div class="md:w-6/12 sm:w-full space-y-6 md:text-left sm:text-center">
                                 <h1 class="font-bold md:text-6xl sm:text-4xl md:leading-tight sm:leading-snug text-white">Flexible Logistics & Cargo for Business</h1>
@@ -33,7 +33,7 @@
                     <div class="absolute h-[650px] w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('web/images/home-front-banner/banner-2.jpg')}}')">
 
                     </div>
-                    <div class="relative h-[650px] flex items-center justify-start w-full bg-cover bg-center bg-no-repeat md:backdrop-blur-0 sm:backdrop-blur-sm">
+                    <div class="relative h-[650px] flex items-center justify-start w-full bg-cover bg-center bg-no-repeat md:bg-transparent sm:bg-[rgba(0,59,73,0.4)]">
                         <div class="container mt-10">
                             <div class="md:w-6/12 sm:w-full space-y-6 md:text-left sm:text-center">
                                 <h1 class="font-bold md:text-6xl sm:text-4xl md:leading-tight sm:leading-snug text-white">Simple & Smart Warehousing Solution</h1>
@@ -53,7 +53,7 @@
                     <div class="absolute h-[650px] w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('web/images/home-front-banner/banner-3.jpg')}}')">
 
                     </div>
-                    <div class="relative h-[650px] flex items-center justify-start w-full bg-cover bg-center bg-no-repeat md:backdrop-blur-0 sm:backdrop-blur-sm">
+                    <div class="relative h-[650px] flex items-center justify-start w-full bg-cover bg-center bg-no-repeat md:bg-transparent sm:bg-[rgba(0,59,73,0.4)]">
                         <div class="container mt-10">
                             <div class="md:w-6/12 sm:w-full space-y-6 md:text-left sm:text-center">
                                 <h1 class="font-bold md:text-6xl sm:text-4xl md:leading-tight sm:leading-snug text-white">Logistics Solutions Around the World</h1>
