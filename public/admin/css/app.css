@@ -2034,6 +2034,9 @@ main{
 .h-\[100px\]{
   height: 100px;
 }
+.h-16{
+  height: 4rem;
+}
 .w-full{
   width: 100%;
 }
@@ -2073,6 +2076,9 @@ main{
 }
 .w-\[100px\]{
   width: 100px;
+}
+.w-16{
+  width: 4rem;
 }
 .origin-top-right{
   transform-origin: top right;
@@ -2283,6 +2289,24 @@ main{
 .fill-web-ascent{
   fill: #FF7D44;
 }
+.stroke-web-ascent{
+  stroke: #FF7D44;
+}
+.stroke-2{
+  stroke-width: 2;
+}
+.stroke-\[2px\]{
+  stroke-width: 2px;
+}
+.stroke-\[1px\]{
+  stroke-width: 1px;
+}
+.stroke-\[1\.5px\]{
+  stroke-width: 1.5px;
+}
+.stroke-\[1\.2px\]{
+  stroke-width: 1.2px;
+}
 .p-10{
   padding: 2.5rem;
 }
@@ -2353,6 +2377,9 @@ main{
 .pb-4{
   padding-bottom: 1rem;
 }
+.pb-2{
+  padding-bottom: 0.5rem;
+}
 .text-left{
   text-align: left;
 }
@@ -2387,6 +2414,14 @@ main{
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+.text-5xl{
+  font-size: 3rem;
+  line-height: 1;
+}
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
 .font-semibold{
   font-weight: 600;
 }
@@ -2398,6 +2433,9 @@ main{
 }
 .font-extralight{
   font-weight: 200;
+}
+.font-normal{
+  font-weight: 400;
 }
 .uppercase{
   text-transform: uppercase;
@@ -2459,6 +2497,10 @@ main{
 .text-gray-500{
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .line-through{
   text-decoration-line: line-through;
@@ -4226,6 +4268,18 @@ table.dataTable thead th, table.dataTable thead td {
     gap: 2.5rem;
   }
 
+  .sm\:gap-6{
+    gap: 1.5rem;
+  }
+
+  .sm\:gap-3{
+    gap: 0.75rem;
+  }
+
+  .sm\:gap-0{
+    gap: 0px;
+  }
+
   .sm\:space-x-3 > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0;
     margin-right: calc(0.75rem * var(--tw-space-x-reverse));
@@ -4310,6 +4364,21 @@ table.dataTable thead th, table.dataTable thead td {
   .sm\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .sm\:text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .sm\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .sm\:leading-snug{
@@ -4443,6 +4512,9 @@ table.dataTable thead th, table.dataTable thead td {
     width: -moz-fit-content;
     width: fit-content;
   }
+    .md\:w-8\/12{
+    width: 66.666667%;
+  }
     .md\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -4543,6 +4615,14 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+    .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+    .md\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
     .md\:leading-tight{
     line-height: 1.25;

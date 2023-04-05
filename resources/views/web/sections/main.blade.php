@@ -126,7 +126,7 @@
             <figure class="md:order-1 sm:order-2">
                 <div class="space-y-5">
                     <h1 class="font-semibold md:text-5xl md:leading-snug sm:text-4xl sm:leading-snug text-web-ascent-dark"><span class="text-web-ascent">Bharat Logistics</span> <br>Around the World</h1>
-                    <p class="text-lg text-gray-500 leading-normal">Transmax is the world’s driving worldwide coordinations supplier — we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
+                    <p class="text-lg text-gray-500 leading-normal">Bharat Logistics is the world’s driving worldwide coordinations supplier — we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
                     <p class="text-lg text-gray-500 leading-normal pb-3">Our worth added administrations guarantee the progression of products proceeds consistently and supply chains stay lean and streamlined for progress.</p>
                     <div>
                         <a href="#"><button class="btn-light-lg">Learn more about us</button></a>
@@ -144,12 +144,12 @@
 {{-- Section (End) --}}
 
 {{-- Section (Start) --}}
-<section class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('/web/images/home-section-images/section-bg-1.png')}}');">
+<section class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('web/images/home-section-images/ section-bg-1.png')}}');">
     <div class="container md:py-20 sm:py-10 md:space-y-16 sm:space-y-8">
 
         <div>
             <h1 class="font-semibold md:text-4xl md:leading-snug sm:text-3xl sm:leading-snug text-web-ascent-dark pb-4">Explore Our <span class="text-web-ascent">Services</span></h1>
-            <p class="text-base text-gray-500 leading-normal">Transmax is the world’s driving worldwide coordinations supplier <br>we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
+            <p class="text-base text-gray-500 leading-normal">Bharat Logistics is the world’s driving worldwide coordinations supplier <br>we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
         </div>
         
         <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10 items-center">
@@ -192,6 +192,59 @@
                     </ul>
                 </div>
             </figure>
+            
+        </div>
+
+    </div>
+</section>
+{{-- Section (End) --}}
+
+{{-- Section (Start) --}}
+<section class="relative">
+    <div class="container md:py-20 sm:py-10 md:space-y-16 sm:space-y-8 bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('/web/images/home-section-images/section-bg-2.png')}}');">
+
+        <div class="md:w-8/12 sm:w-full text-center mx-auto">
+            <h1 class="font-semibold md:text-4xl md:leading-snug sm:text-3xl sm:leading-snug text-web-ascent-dark pb-4">Our Goals in <span class="text-web-ascent">Numbers</span></h1>
+            <p class="text-base text-gray-500 leading-normal">Bharat Logistics is the world’s driving worldwide coordinations supplier <br>we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-4 sm:grid-cols-2 md:gap-10 sm:gap-3 items-center">
+
+           <figure>
+                <div class="p-5 text-center flex flex-col items-center justify-center space-y-3">
+                    <i data-feather="shopping-bag" class="h-16 w-16 stroke-web-ascent pb-2 stroke-[1.2px]"></i>
+                    <h1 class="font-normal text-web-ascent-dark text-4xl">300+</h1>
+                    <h2 class="font-medium md:text-xl sm:text-lg text-black">Warehouses Managed</h2>
+                    <p class="md:text-base sm:text-xs text-gray-500 leading-normal">We help you mitigate supply chain disruptions.</p>
+                </div>
+           </figure>
+
+           <figure>
+                <div class="p-5 text-center flex flex-col items-center justify-center space-y-3">
+                    <i data-feather="settings" class="h-16 w-16 stroke-web-ascent pb-2 stroke-[1.2px]"></i>
+                    <h1 class="font-normal text-web-ascent-dark text-4xl">120+</h1>
+                    <h2 class="font-medium md:text-xl sm:text-lg text-black">Supply Engineers</h2>
+                    <p class="md:text-base sm:text-xs text-gray-500 leading-normal">We help you mitigate supply chain disruptions.</p>
+                </div>
+           </figure>
+
+           <figure>
+                <div class="p-5 text-center flex flex-col items-center justify-center space-y-3">
+                    <i data-feather="globe" class="h-16 w-16 stroke-web-ascent pb-2 stroke-[1.2px]"></i>
+                    <h1 class="font-normal text-web-ascent-dark text-4xl">60+</h1>
+                    <h2 class="font-medium md:text-xl sm:text-lg text-black">Countries Covered</h2>
+                    <p class="md:text-base sm:text-xs text-gray-500 leading-normal">We help you mitigate supply chain disruptions.</p>
+                </div>
+           </figure>
+
+           <figure>
+                <div class="p-5 text-center flex flex-col items-center justify-center space-y-3">
+                    <i data-feather="map-pin" class="h-16 w-16 stroke-web-ascent pb-2 stroke-[1.2px]"></i>
+                    <h1 class="font-normal text-web-ascent-dark text-4xl">500+</h1>
+                    <h2 class="font-medium md:text-xl sm:text-lg text-black">Companies We Help</h2>
+                    <p class="md:text-base sm:text-xs text-gray-500 leading-normal">We help you mitigate supply chain disruptions.</p>
+                </div>
+           </figure>
             
         </div>
 
