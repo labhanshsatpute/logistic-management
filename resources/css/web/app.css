@@ -51,15 +51,16 @@
     @apply px-10 py-4 border text-base border-web-ascent-dark bg-web-ascent-dark font-medium text-white relative hover:bg-web-ascent hover:border-web-ascent uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
 }
 
-.btn-secondary-sm {
-    @apply px-4 py-2 border rounded-md text-xs border-web-ascent border-opacity-5 bg-web-ascent bg-opacity-10 font-medium text-web-ascent relative hover:bg-opacity-20 active:bg-opacity-20
+.btn-light-sm {
+    @apply px-4 py-2 border text-xs border-gray-100 bg-gray-100 font-medium text-web-ascent-dark relative hover:bg-web-ascent active:bg-web-ascent hover:text-white active:text-white uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
 }
-.btn-secondary-md {
-    @apply px-5 py-3 border rounded-md text-sm border-web-ascent border-opacity-5 bg-web-ascent bg-opacity-10 font-medium text-web-ascent relative hover:bg-opacity-20 active:bg-opacity-20
+.btn-light-md {
+    @apply px-8 py-3 border text-sm border-gray-100 bg-gray-100 font-medium text-web-ascent-dark relative hover:bg-web-ascent active:bg-web-ascent hover:text-white active:text-white uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
 }
-.btn-secondary-lg {
-    @apply px-6 py-3 border rounded-md text-lg border-web-ascent border-opacity-5 bg-web-ascent bg-opacity-10 font-medium text-web-ascent relative hover:bg-opacity-20 active:bg-opacity-20
+.btn-light-lg {
+    @apply px-10 py-4 border text-base border-gray-100 bg-gray-100 font-medium text-web-ascent-dark relative hover:bg-web-ascent active:bg-web-ascent hover:text-white active:text-white uppercase tracking-wider transition duration-500 ease-in-out hover:ease-in-out
 }
+
 button[disabled] {
     @apply opacity-70
 }

@@ -118,6 +118,31 @@
 </section>
 {{-- Section (End) --}}
 
+{{-- Section (Start) --}}
+<section class="relative">
+    <div class="container md:py-20 sm:py-10">
+        <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-16 items-center">
+
+            <figure class="md:order-1 sm:order-2">
+                <div class="space-y-5">
+                    <h1 class="font-semibold md:text-5xl md:leading-snug sm:text-4xl sm:leading-snug text-web-ascent-dark"><span class="text-web-ascent">Bharat Logistics</span> <br>Around the World</h1>
+                    <p class="text-lg text-gray-500 leading-normal">Transmax is the world’s driving worldwide coordinations supplier — we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
+                    <p class="text-lg text-gray-500 leading-normal pb-3">Our worth added administrations guarantee the progression of products proceeds consistently and supply chains stay lean and streamlined for progress.</p>
+                    <div>
+                        <a href="#"><button class="btn-light-lg">Learn more about us</button></a>
+                    </div>
+                </div>
+            </figure>
+
+            <figure class="md:order-2 sm:order-1">
+                <img src="{{asset('web/images/home-section-images/img-1.png')}}" alt="img-1" class="w-full h-auto mx-auto">
+            </figure>
+            
+        </div>
+    </div>
+</section>
+{{-- Section (End) --}}
+
 @endsection
 
 @section('web-script')
