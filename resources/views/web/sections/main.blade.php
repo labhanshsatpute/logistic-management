@@ -81,7 +81,7 @@
 
 {{-- Section (Start) --}}
 <section class="relative overflow-visible z-20">
-    <div class="md:container overflow-visible md:pb-20">
+    <div class="md:container overflow-visible md:pb-16">
 
         <div class="grid md:grid-cols-2 sm:grid-cols-1 shadow-xl md:mt-[-100px]">
             <figure class="md:p-16 sm:p-10 bg-white">
@@ -121,7 +121,7 @@
 {{-- Section (Start) --}}
 <section class="relative">
     <div class="container md:py-20 sm:py-10">
-        <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-16 items-center">
+        <div class="grid md:grid-cols-2 sm:grid-cols-1 md:gap-16 sm:gap-10 items-center">
 
             <figure class="md:order-1 sm:order-2">
                 <div class="space-y-5">
@@ -135,10 +135,66 @@
             </figure>
 
             <figure class="md:order-2 sm:order-1">
-                <img src="{{asset('web/images/home-section-images/img-1.png')}}" alt="img-1" class="w-full h-auto mx-auto">
+                <img src="{{asset('web/images/home-section-images/img-1.png')}}" alt="img-1" class="w-full h-auto mx-auto md:p-6 sm:p-0">
             </figure>
             
         </div>
+    </div>
+</section>
+{{-- Section (End) --}}
+
+{{-- Section (Start) --}}
+<section class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('/web/images/home-section-images/section-bg-1.png')}}');">
+    <div class="container md:py-20 sm:py-10 md:space-y-16 sm:space-y-8">
+
+        <div>
+            <h1 class="font-semibold md:text-4xl md:leading-snug sm:text-3xl sm:leading-snug text-web-ascent-dark pb-4">Explore Our <span class="text-web-ascent">Services</span></h1>
+            <p class="text-base text-gray-500 leading-normal">Transmax is the world’s driving worldwide coordinations supplier <br>we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10 items-center">
+
+            <figure class="service-card">
+                <div>
+                    <img src="{{asset('web/images/home-section-images/services/img-1.png')}}" alt="service-1">
+                    <h1>Land Transport</h1>
+                    <p>With a worldwide organization and progressed coordination arrangements, our airship cargo sending items.</p>
+                    <ul>
+                        <li>Part & Full Loads</li>
+                        <li>Multimodal Solutions</li>
+                        <li>Intermodal Solutions</li>
+                    </ul>
+                </div>
+            </figure>
+
+            <figure class="service-card">
+                <div>
+                    <img src="{{asset('web/images/home-section-images/services/img-2.png')}}" alt="service-2">
+                    <h1>Air Freight</h1>
+                    <p>We help transport your load anyplace on the planet, making your business run easily regardless of where products.</p>
+                    <ul>
+                        <li>General Air Freight Products</li>
+                        <li>Charter Services</li>
+                        <li>Intermodal Solutions</li>
+                    </ul>
+                </div>
+            </figure>
+
+            <figure class="service-card">
+                <div>
+                    <img src="{{asset('web/images/home-section-images/services/img-3.png')}}" alt="service-3">
+                    <h1>Ocean Freight</h1>
+                    <p>Sea cargo dispatches in excess of 5,500 holders per day to ports all around the globe, making us a top forwarder.</p>
+                    <ul>
+                        <li>Less-than-container Load</li>
+                        <li>Full Container Load</li>
+                        <li>Intermodal Solutions</li>
+                    </ul>
+                </div>
+            </figure>
+            
+        </div>
+
     </div>
 </section>
 {{-- Section (End) --}}

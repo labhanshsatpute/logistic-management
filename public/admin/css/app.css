@@ -2098,14 +2098,14 @@ main{
 .justify-between{
   justify-content: space-between;
 }
+.gap-16{
+  gap: 4rem;
+}
 .gap-5{
   gap: 1.25rem;
 }
 .gap-10{
   gap: 2.5rem;
-}
-.gap-16{
-  gap: 4rem;
 }
 .space-y-6 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
@@ -2298,6 +2298,9 @@ main{
 .p-0{
   padding: 0px;
 }
+.p-6{
+  padding: 1.5rem;
+}
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -2326,10 +2329,6 @@ main{
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
-.py-20{
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2337,6 +2336,10 @@ main{
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .pt-\[95px\]{
   padding-top: 95px;
@@ -2384,10 +2387,6 @@ main{
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
-}
 .font-semibold{
   font-weight: 600;
 }
@@ -2403,14 +2402,8 @@ main{
 .uppercase{
   text-transform: uppercase;
 }
-.leading-relaxed{
-  line-height: 1.625;
-}
 .leading-normal{
   line-height: 1.5;
-}
-.leading-snug{
-  line-height: 1.375;
 }
 .tracking-wider{
   letter-spacing: 0.05em;
@@ -2455,13 +2448,13 @@ main{
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
-.text-web-ascent{
-  --tw-text-opacity: 1;
-  color: rgb(255 125 68 / var(--tw-text-opacity));
-}
 .text-web-ascent-dark{
   --tw-text-opacity: 1;
   color: rgb(0 59 73 / var(--tw-text-opacity));
+}
+.text-web-ascent{
+  --tw-text-opacity: 1;
+  color: rgb(255 125 68 / var(--tw-text-opacity));
 }
 .text-gray-500{
   --tw-text-opacity: 1;
@@ -4229,6 +4222,10 @@ table.dataTable thead th, table.dataTable thead td {
     gap: 1.25rem;
   }
 
+  .sm\:gap-10{
+    gap: 2.5rem;
+  }
+
   .sm\:space-x-3 > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0;
     margin-right: calc(0.75rem * var(--tw-space-x-reverse));
@@ -4253,6 +4250,12 @@ table.dataTable thead th, table.dataTable thead td {
     margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
   }
 
+  .sm\:space-y-8 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+  }
+
   .sm\:border-2{
     border-width: 2px;
   }
@@ -4273,9 +4276,12 @@ table.dataTable thead th, table.dataTable thead td {
     padding: 2.5rem;
   }
 
-  .sm\:py-14{
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+  .sm\:p-2{
+    padding: 0.5rem;
+  }
+
+  .sm\:p-0{
+    padding: 0px;
   }
 
   .sm\:py-10{
@@ -4299,6 +4305,11 @@ table.dataTable thead th, table.dataTable thead td {
   .sm\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .sm\:leading-snug{
@@ -4450,6 +4461,9 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:gap-7{
     gap: 1.75rem;
   }
+    .md\:gap-16{
+    gap: 4rem;
+  }
     .md\:space-x-5 > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0;
     margin-right: calc(1.25rem * var(--tw-space-x-reverse));
@@ -4470,6 +4484,16 @@ table.dataTable thead th, table.dataTable thead td {
     margin-right: calc(1.75rem * var(--tw-space-x-reverse));
     margin-left: calc(1.75rem * calc(1 - var(--tw-space-x-reverse)));
   }
+    .md\:space-y-10 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+  }
+    .md\:space-y-16 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(4rem * var(--tw-space-y-reverse));
+  }
     .md\:border-4{
     border-width: 4px;
   }
@@ -4485,6 +4509,9 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:p-16{
     padding: 4rem;
   }
+    .md\:p-6{
+    padding: 1.5rem;
+  }
     .md\:py-20{
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -4494,6 +4521,9 @@ table.dataTable thead th, table.dataTable thead td {
   }
     .md\:pb-20{
     padding-bottom: 5rem;
+  }
+    .md\:pb-16{
+    padding-bottom: 4rem;
   }
     .md\:text-left{
     text-align: left;
@@ -4509,6 +4539,10 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:text-5xl{
     font-size: 3rem;
     line-height: 1;
+  }
+    .md\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
     .md\:leading-tight{
     line-height: 1.25;

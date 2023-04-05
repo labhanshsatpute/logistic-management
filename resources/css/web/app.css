@@ -131,7 +131,6 @@ input:read-only {
 
 
 /* Sidebar (Start) */
-
 .sidebar {
     @apply min-h-[120vh] w-[100%] bg-white fixed z-40 overflow-y-auto shadow-lg border md:hidden sm:block
 }
@@ -144,3 +143,36 @@ input:read-only {
     transition: 0.3s ease;
 }
 /* Sidebar (End) */
+
+/* Service Card (Start) */
+.service-card {
+    @apply bg-white shadow-lg border-b-4 border-web-ascent hover:bg-web-ascent-dark transition duration-500 ease-in-out hover:ease-in-out cursor-default
+}
+.service-card > div {
+    @apply p-10 flex flex-col space-y-4
+}
+.service-card > div > img {
+    @apply h-[100px] w-fit
+}
+.service-card > div > h1 {
+    @apply font-semibold text-web-ascent-dark text-2xl
+}
+.service-card > div > p {
+    @apply font-light text-gray-500 text-lg leading-relaxed
+}
+.service-card > div > ul {
+    @apply list-disc pl-4 space-y-1
+}
+.service-card > div > ul > li {
+    @apply font-medium text-gray-900 text-lg leading-relaxed marker:text-web-ascent
+}
+.service-card:hover > div > h1 {
+    @apply text-white
+}
+.service-card:hover > div > p {
+    @apply text-white
+}
+.service-card:hover > div > ul > li {
+    @apply text-white
+}
+/* Service Card (End) */
