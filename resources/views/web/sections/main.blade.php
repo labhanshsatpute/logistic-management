@@ -126,8 +126,8 @@
             <figure class="md:order-1 sm:order-2">
                 <div class="space-y-5">
                     <h1 class="font-semibold md:text-5xl md:leading-snug sm:text-4xl sm:leading-snug text-web-ascent-dark"><span class="text-web-ascent">Bharat Logistics</span> <br>Around the World</h1>
-                    <p class="text-lg text-gray-500 leading-normal">Bharat Logistics is the world’s driving worldwide coordinations supplier — we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
-                    <p class="text-lg text-gray-500 leading-normal pb-3">Our worth added administrations guarantee the progression of products proceeds consistently and supply chains stay lean and streamlined for progress.</p>
+                    <p class="text-lg text-gray-500 leading-relaxed">Bharat Logistics is the world’s driving worldwide coordinations supplier — we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
+                    <p class="text-lg text-gray-500 leading-relaxed pb-3">Our worth added administrations guarantee the progression of products proceeds consistently and supply chains stay lean and streamlined for progress.</p>
                     <div>
                         <a href="#"><button class="btn-light-lg">Learn more about us</button></a>
                     </div>
@@ -149,7 +149,7 @@
 
         <div>
             <h1 class="font-semibold md:text-4xl md:leading-snug sm:text-3xl sm:leading-snug text-web-ascent-dark pb-4">Explore Our <span class="text-web-ascent">Services</span></h1>
-            <p class="text-base text-gray-500 leading-normal">Bharat Logistics is the world’s driving worldwide coordinations supplier <br>we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
+            <p class="text-base text-gray-500 leading-relaxed">Bharat Logistics is the world’s driving worldwide coordinations supplier <br>we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
         </div>
         
         <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10 items-center">
@@ -205,7 +205,7 @@
 
         <div class="md:w-8/12 sm:w-full text-center mx-auto">
             <h1 class="font-semibold md:text-4xl md:leading-snug sm:text-3xl sm:leading-snug text-web-ascent-dark pb-4">Our Goals in <span class="text-web-ascent">Numbers</span></h1>
-            <p class="text-base text-gray-500 leading-normal">Bharat Logistics is the world’s driving worldwide coordinations supplier <br>we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
+            <p class="text-base text-gray-500 leading-relaxed">Bharat Logistics is the world’s driving worldwide coordinations supplier <br>we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
         </div>
         
         <div class="grid md:grid-cols-4 sm:grid-cols-2 md:gap-10 sm:gap-3 items-center">
@@ -252,6 +252,57 @@
 </section>
 {{-- Section (End) --}}
 
+{{-- Section (Start) --}}
+<section class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('{{asset('web/images/home-section-images/ section-bg-1.png')}}');">
+    <div class="container md:py-20 sm:py-10">        
+        <div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10 items-center">
+
+            <div>
+                <div class="space-y-4">
+                    <h1 class="font-semibold md:text-5xl md:leading-snug sm:text-4xl sm:leading-snug text-web-ascent-dark">People Say About Our <span class="text-web-ascent">Company</span></h1>
+                    <p class="text-base text-gray-500 leading-relaxed pb-4">Bharat Logistics is the world’s driving worldwide coordinations supplier we uphold industry and exchange the worldwide trade of merchandise through land transport.</p>
+                    <div>
+                        <a href="#"><button class="btn-ascent-dark-lg">All Testimonial</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2 sm:col-span-1">
+                <div class="swiper home-testiomnial-carousel">
+                    <div class="swiper-wrapper">
+
+                            @for ($i = 0; $i < 4; $i++)
+                            <div class="swiper-slide md:p-4 md:pb-16 sm:pb-16">
+                                <figure class="testimonial-card">
+                                    <div>
+                                        <h1 class="title">"Great Work!"</h1>
+                                        <p class="summary">I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!</p>
+                                        <div>
+                                            <div class="profile">
+                                                <img src="{{asset('web/images/testimonial/img-1.jpg')}}" alt="img-1">
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="name">Mr. Tim Cook</h3>
+                                                <p class="designation">CEO, Apple India Inc.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </div>
+                            @endfor
+
+                    </div>
+                    <div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{{-- Section (End) --}}
+
 @endsection
 
 @section('web-script')
@@ -278,6 +329,29 @@
             autoplaySpeed: 2000,
             pagination: {
                 el: ".swiper-pagination",
+            },
+        });
+
+
+        let testimonialCarousel = new Swiper(".home-testiomnial-carousel", {
+            loop: true,
+            speed: 1000,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1
+                },
+                768: {
+                    slidesPerView: 2
+                },
+                1024: {
+                    slidesPerView: 2
+                },
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
             },
         });
     </script>

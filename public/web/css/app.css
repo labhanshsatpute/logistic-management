@@ -1542,6 +1542,9 @@ body {
 .h-20{
   height: 5rem;
 }
+.h-16{
+  height: 4rem;
+}
 .h-24{
   height: 6rem;
 }
@@ -1560,9 +1563,6 @@ body {
 }
 .h-\[100px\]{
   height: 100px;
-}
-.h-16{
-  height: 4rem;
 }
 .w-full{
   width: 100%;
@@ -1592,6 +1592,9 @@ body {
   width: -moz-fit-content;
   width: fit-content;
 }
+.w-16{
+  width: 4rem;
+}
 .w-24{
   width: 6rem;
 }
@@ -1603,9 +1606,6 @@ body {
 }
 .w-\[100px\]{
   width: 100px;
-}
-.w-16{
-  width: 4rem;
 }
 .origin-top-right{
   transform-origin: top right;
@@ -1816,18 +1816,6 @@ body {
 .stroke-web-ascent{
   stroke: #FF7D44;
 }
-.stroke-2{
-  stroke-width: 2;
-}
-.stroke-\[2px\]{
-  stroke-width: 2px;
-}
-.stroke-\[1px\]{
-  stroke-width: 1px;
-}
-.stroke-\[1\.5px\]{
-  stroke-width: 1.5px;
-}
 .stroke-\[1\.2px\]{
   stroke-width: 1.2px;
 }
@@ -1840,11 +1828,17 @@ body {
 .p-7{
   padding: 1.75rem;
 }
+.p-3{
+  padding: 0.75rem;
+}
 .p-2{
   padding: 0.5rem;
 }
 .p-0{
   padding: 0px;
+}
+.p-4{
+  padding: 1rem;
 }
 .px-5{
   padding-left: 1.25rem;
@@ -1897,6 +1891,9 @@ body {
 .pb-2{
   padding-bottom: 0.5rem;
 }
+.pb-16{
+  padding-bottom: 4rem;
+}
 .text-left{
   text-align: left;
 }
@@ -1931,14 +1928,6 @@ body {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
-}
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
 .font-semibold{
   font-weight: 600;
 }
@@ -1956,6 +1945,9 @@ body {
 }
 .uppercase{
   text-transform: uppercase;
+}
+.leading-relaxed{
+  line-height: 1.625;
 }
 .leading-normal{
   line-height: 1.5;
@@ -2800,83 +2792,176 @@ input:read-only{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 /* Service Card (End) */
+
+/* Testimonial Card (Start) */
+.testimonial-card{
+  cursor: default;
+  border-bottom-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 125 68 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.testimonial-card > div{
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-card > div > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+.testimonial-card > div{
+  padding: 2.5rem;
+}
+.testimonial-card .title{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(0 59 73 / var(--tw-text-opacity));
+}
+.testimonial-card .summary{
+  padding-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 300;
+  line-height: 1.625;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.testimonial-card .name{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(0 59 73 / var(--tw-text-opacity));
+}
+.testimonial-card .designation{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 300;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.testimonial-card > div > div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.testimonial-card > div > div > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.testimonial-card .profile img{
+  height: 70px;
+  width: 70px;
+  border-radius: 9999px;
+}
+
+/* Testimonial Card (End) */
+
 .after\:absolute::after{
   content: var(--tw-content);
   position: absolute;
 }
+
 .after\:top-\[2px\]::after{
   content: var(--tw-content);
   top: 2px;
 }
+
 .after\:left-\[2\.5px\]::after{
   content: var(--tw-content);
   left: 2.5px;
 }
+
 .after\:h-4::after{
   content: var(--tw-content);
   height: 1rem;
 }
+
 .after\:w-4::after{
   content: var(--tw-content);
   width: 1rem;
 }
+
 .after\:rounded-full::after{
   content: var(--tw-content);
   border-radius: 9999px;
 }
+
 .after\:border::after{
   content: var(--tw-content);
   border-width: 1px;
 }
+
 .after\:border-gray-300::after{
   content: var(--tw-content);
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
+
 .after\:bg-white::after{
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+
 .after\:transition-all::after{
   content: var(--tw-content);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+
 .after\:content-\[\'\'\]::after{
   --tw-content: '';
   content: var(--tw-content);
 }
+
 .hover\:text-admin-ascent-dark:hover{
   --tw-text-opacity: 1;
   color: rgb(27 1 86 / var(--tw-text-opacity));
 }
+
 .hover\:text-web-ascent:hover{
   --tw-text-opacity: 1;
   color: rgb(255 125 68 / var(--tw-text-opacity));
 }
+
 .hover\:ease-in-out:hover{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .peer:checked ~ .peer-checked\:bg-admin-ascent{
   --tw-bg-opacity: 1;
   background-color: rgb(58 12 163 / var(--tw-bg-opacity));
 }
+
 .peer:checked ~ .peer-checked\:after\:translate-x-full::after{
   content: var(--tw-content);
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 .peer:checked ~ .peer-checked\:after\:border-white::after{
   content: var(--tw-content);
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
+
 .peer:focus ~ .peer-focus\:outline-none{
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+
 @media (prefers-color-scheme: dark){
 
   .dark\:border-gray-600{
@@ -2889,6 +2974,7 @@ input:read-only{
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 }
+
 @media (min-width: 300px){
 
   .sm\:right-\[-72px\]{
@@ -2963,16 +3049,8 @@ input:read-only{
     gap: 2.5rem;
   }
 
-  .sm\:gap-6{
-    gap: 1.5rem;
-  }
-
   .sm\:gap-3{
     gap: 0.75rem;
-  }
-
-  .sm\:gap-0{
-    gap: 0px;
   }
 
   .sm\:space-x-3 > :not([hidden]) ~ :not([hidden]){
@@ -3038,6 +3116,10 @@ input:read-only{
     padding-top: 82px;
   }
 
+  .sm\:pb-16{
+    padding-bottom: 4rem;
+  }
+
   .sm\:text-center{
     text-align: center;
   }
@@ -3057,19 +3139,14 @@ input:read-only{
     line-height: 2.25rem;
   }
 
-  .sm\:text-xs{
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
   .sm\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-  .sm\:text-base{
-    font-size: 1rem;
-    line-height: 1.5rem;
+  .sm\:text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 
   .sm\:leading-snug{
@@ -3080,6 +3157,7 @@ input:read-only{
     line-height: 1.625;
   }
 }
+
 @media (min-width: 600px){
 
   .md\:container{
@@ -3160,11 +3238,11 @@ input:read-only{
     .md\:order-2{
     order: 2;
   }
-    .md\:col-span-4{
-    grid-column: span 4 / span 4;
-  }
     .md\:col-span-2{
     grid-column: span 2 / span 2;
+  }
+    .md\:col-span-4{
+    grid-column: span 4 / span 4;
   }
     .md\:mt-2{
     margin-top: 0.5rem;
@@ -3199,12 +3277,12 @@ input:read-only{
     .md\:w-6\/12{
     width: 50%;
   }
+    .md\:w-8\/12{
+    width: 66.666667%;
+  }
     .md\:w-fit{
     width: -moz-fit-content;
     width: fit-content;
-  }
-    .md\:w-8\/12{
-    width: 66.666667%;
   }
     .md\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3270,6 +3348,9 @@ input:read-only{
     .md\:p-6{
     padding: 1.5rem;
   }
+    .md\:p-4{
+    padding: 1rem;
+  }
     .md\:py-20{
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -3279,6 +3360,9 @@ input:read-only{
   }
     .md\:pb-16{
     padding-bottom: 4rem;
+  }
+    .md\:pb-10{
+    padding-bottom: 2.5rem;
   }
     .md\:text-left{
     text-align: left;
@@ -3299,13 +3383,13 @@ input:read-only{
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
-    .md\:text-base{
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
     .md\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+    .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
     .md\:leading-tight{
     line-height: 1.25;
@@ -3317,3 +3401,4 @@ input:read-only{
     line-height: 1.375;
   }
 }
+

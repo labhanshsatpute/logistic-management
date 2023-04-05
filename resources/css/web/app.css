@@ -176,3 +176,32 @@ input:read-only {
     @apply text-white
 }
 /* Service Card (End) */
+
+/* Testimonial Card (Start) */
+.testimonial-card {
+    @apply bg-white shadow-lg border-b-4 border-web-ascent cursor-default
+}
+.testimonial-card > div {
+    @apply p-10 flex flex-col space-y-5
+}
+.testimonial-card .title {
+    @apply font-medium text-web-ascent-dark text-xl
+}
+.testimonial-card .summary {
+    @apply font-light text-gray-500 text-lg leading-relaxed pb-2
+}
+.testimonial-card .name {
+    @apply font-medium text-web-ascent-dark text-lg
+}
+.testimonial-card .designation {
+    @apply font-light text-gray-500 text-sm
+}
+
+.testimonial-card > div > div {
+    @apply flex items-center justify-start space-x-3
+}
+.testimonial-card .profile img {
+    @apply h-[70px] w-[70px] rounded-full
+}
+
+/* Testimonial Card (End) */
