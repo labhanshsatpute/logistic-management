@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('packages', function (Blueprint $table) {
+        Schema::create('shippments', function (Blueprint $table) {
             $table->bigIncrements('id')->from(100001);
+            $table->foreignId('user_id')->references('id')->on('users')->nullable();
 
             $table->string('sender_name');
             $table->string('sender_email');
@@ -41,24 +42,33 @@ return new class extends Migration
             $table->string('reciever_address_country');
 
             $table->string('package_name');
+            $table->string('package_image')->nullable();
             $table->text('package_summary')->nullable();
-            $table->longText('package_description')->nullable();
             $table->enum('package_type',['Grocery','Food & Vegetable','Electronics','Home Appliances','Furniture','Handle With Care','Vaccine','Medicine','Liquor','Other']);
-            $table->enum('package_payment',['Prepaid','COD']);
-            $table->double('package_payment_amount',16,2)->nullable();
 
             $table->double('package_length',16,2);
             $table->double('package_width',16,2);
             $table->double('package_height',16,2);
             $table->double('package_weight',16,2);
 
-            $table->date('pickup_date');
-            $table->enum('pickup_slot',['Morning','Afternoon','Evening']);
-            $table->enum('pickup_status',['Pending','Picked'])->nullable();
+            $table->enum('status',['Placed','Confirmed','Cancelled'])->default('Placed');
+            $table->enum('payment_status',['Pending','Paid'])->default('Pending');
 
-            $table->date('delivery_date')->nullable();            
+            $table->double('payment_delivery_charges',16,2)->nullable();
+            $table->double('payment_tax_charges',16,2)->nullable();
+            $table->double('payment_total',16,2)->nullable();
+
+            $table->date('pickup_date')->nullable();
+            $table->enum('pickup_slot',['Morning','Afternoon','Evening'])->nullable();
+            $table->enum('pickup_status',['Pending','Picked'])->default('Pending');
+            $table->foreignId('pickup_boy_id')->nullable();
+            $table->foreignId('pickup_branch_id')->nullable();
+
+            $table->date('delivery_date')->nullable();
             $table->enum('delivery_slot',['Morning','Afternoon','Evening'])->nullable();
-            $table->enum('delivery_status',['Pending','Picked'])->nullable();
+            $table->enum('delivery_status',['Pending','Delivered'])->default('Pending');
+            $table->foreignId('delivery_boy_id')->nullable();
+            $table->foreignId('delivery_branch_id')->nullable();
 
             $table->timestamps();
         });
@@ -71,6 +81,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('packages');
+        Schema::dropIfExists('shippments');
     }
 };

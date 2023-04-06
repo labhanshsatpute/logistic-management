@@ -74,13 +74,13 @@ button[disabled] {
     @apply flex flex-col
 }
 .input-box-sm {
-    @apply px-4 py-2 border rounded-md text-xs outline-web-ascent border-slate-300 font-medium bg-white
+    @apply px-4 py-2 border text-xs outline-web-ascent border-gray-300 font-medium bg-white
 }
 .input-box-md {
-    @apply px-4 py-3 border rounded-md text-sm outline-web-ascent border-slate-300 font-medium bg-white
+    @apply px-5 py-3 border text-sm outline-web-ascent border-gray-300 font-medium bg-white
 }
 .input-box-lg {
-    @apply px-6 py-3 border rounded-md text-lg outline-web-ascent border-slate-300 font-medium bg-white
+    @apply px-10 py-4 border text-base outline-web-ascent border-gray-300 font-medium bg-white
 }
 .input-box-sm.input-invalid,
 .input-box-md.input-invalid,

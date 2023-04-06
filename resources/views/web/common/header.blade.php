@@ -1,4 +1,4 @@
-<header class="relative z-50 top-0 bg-white border-b md:block sm:hidden" id="desktop-header">
+<header class="relative z-50 top-0 bg-white border-b md:block sm:hidden shadow-lg" id="desktop-header">
     <nav>
         <div class="container py-4">
             <div class="flex items-center justify-between">
