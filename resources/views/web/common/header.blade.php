@@ -2,7 +2,7 @@
     <nav>
         <div class="container py-4">
             <div class="flex items-center justify-between">
-                <a href="#">
+                <a href="{{route('main')}}">
                     <img src="{{asset('web/images/logo.png')}}" alt="logo" class="h-[50px] w-auto">
                 </a>
                 <div class="flex items-center space-x-9">

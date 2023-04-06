@@ -205,3 +205,15 @@ input:read-only {
 }
 
 /* Testimonial Card (End) */
+
+/* Footer (Start) */
+.footer-link-list {
+    @apply list-disc pl-4 space-y-4
+}
+.footer-link-list li {
+    @apply marker:text-web-ascent
+}
+.footer-link {
+    @apply text-base text-gray-700 hover:text-web-ascent transition duration-500 ease-in-out hover:ease-in-out
+}
+/* Footer (End) */

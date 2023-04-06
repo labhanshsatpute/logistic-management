@@ -1913,6 +1913,10 @@ main{
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+.my-3{
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
 .mb-2{
   margin-bottom: 0.5rem;
 }
@@ -2015,6 +2019,9 @@ main{
 .h-20{
   height: 5rem;
 }
+.h-16{
+  height: 4rem;
+}
 .h-24{
   height: 6rem;
 }
@@ -2034,8 +2041,14 @@ main{
 .h-\[100px\]{
   height: 100px;
 }
-.h-16{
-  height: 4rem;
+.h-1{
+  height: 0.25rem;
+}
+.h-\[70px\]{
+  height: 70px;
+}
+.h-\[60px\]{
+  height: 60px;
 }
 .w-full{
   width: 100%;
@@ -2065,6 +2078,9 @@ main{
   width: -moz-fit-content;
   width: fit-content;
 }
+.w-16{
+  width: 4rem;
+}
 .w-24{
   width: 6rem;
 }
@@ -2076,9 +2092,6 @@ main{
 }
 .w-\[100px\]{
   width: 100px;
-}
-.w-16{
-  width: 4rem;
 }
 .origin-top-right{
   transform-origin: top right;
@@ -2104,14 +2117,14 @@ main{
 .justify-between{
   justify-content: space-between;
 }
-.gap-16{
-  gap: 4rem;
+.gap-10{
+  gap: 2.5rem;
 }
 .gap-5{
   gap: 1.25rem;
 }
-.gap-10{
-  gap: 2.5rem;
+.gap-8{
+  gap: 2rem;
 }
 .space-y-6 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
@@ -2215,6 +2228,10 @@ main{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(0 0 0.5 / var(--tw-border-opacity));
 }
+.border-b-slate-600{
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(71 85 105 / var(--tw-border-opacity));
+}
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2262,6 +2279,10 @@ main{
   --tw-bg-opacity: 1;
   background-color: rgb(58 12 163 / var(--tw-bg-opacity));
 }
+.bg-web-complement{
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 231 231 / var(--tw-bg-opacity));
+}
 .bg-opacity-50{
   --tw-bg-opacity: 0.5;
 }
@@ -2292,18 +2313,6 @@ main{
 .stroke-web-ascent{
   stroke: #FF7D44;
 }
-.stroke-2{
-  stroke-width: 2;
-}
-.stroke-\[2px\]{
-  stroke-width: 2px;
-}
-.stroke-\[1px\]{
-  stroke-width: 1px;
-}
-.stroke-\[1\.5px\]{
-  stroke-width: 1.5px;
-}
 .stroke-\[1\.2px\]{
   stroke-width: 1.2px;
 }
@@ -2321,15 +2330,6 @@ main{
 }
 .p-0{
   padding: 0px;
-}
-.p-6{
-  padding: 1.5rem;
-}
-.p-3{
-  padding: 0.75rem;
-}
-.p-4{
-  padding: 1rem;
 }
 .px-5{
   padding-left: 1.25rem;
@@ -2367,9 +2367,17 @@ main{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.px-6{
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+.py-16{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.py-24{
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 .pt-\[95px\]{
   padding-top: 95px;
@@ -2386,8 +2394,14 @@ main{
 .pb-2{
   padding-bottom: 0.5rem;
 }
-.pb-16{
-  padding-bottom: 4rem;
+.pb-5{
+  padding-bottom: 1.25rem;
+}
+.pt-24{
+  padding-top: 6rem;
+}
+.pb-20{
+  padding-bottom: 5rem;
 }
 .text-left{
   text-align: left;
@@ -2423,10 +2437,6 @@ main{
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
-}
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -2449,11 +2459,14 @@ main{
 .uppercase{
   text-transform: uppercase;
 }
+.leading-relaxed{
+  line-height: 1.625;
+}
 .leading-normal{
   line-height: 1.5;
 }
-.leading-relaxed{
-  line-height: 1.625;
+.leading-loose{
+  line-height: 2;
 }
 .tracking-wider{
   letter-spacing: 0.05em;
@@ -2513,6 +2526,14 @@ main{
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-gray-800{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+.text-gray-700{
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 .line-through{
   text-decoration-line: line-through;
@@ -4280,16 +4301,12 @@ table.dataTable thead th, table.dataTable thead td {
     gap: 2.5rem;
   }
 
-  .sm\:gap-6{
-    gap: 1.5rem;
-  }
-
   .sm\:gap-3{
     gap: 0.75rem;
   }
 
-  .sm\:gap-0{
-    gap: 0px;
+  .sm\:gap-12{
+    gap: 3rem;
   }
 
   .sm\:space-x-3 > :not([hidden]) ~ :not([hidden]){
@@ -4322,6 +4339,12 @@ table.dataTable thead th, table.dataTable thead td {
     margin-bottom: calc(2rem * var(--tw-space-y-reverse));
   }
 
+  .sm\:space-y-4 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+  }
+
   .sm\:border-2{
     border-width: 2px;
   }
@@ -4342,10 +4365,6 @@ table.dataTable thead th, table.dataTable thead td {
     padding: 2.5rem;
   }
 
-  .sm\:p-2{
-    padding: 0.5rem;
-  }
-
   .sm\:p-0{
     padding: 0px;
   }
@@ -4361,6 +4380,18 @@ table.dataTable thead th, table.dataTable thead td {
 
   .sm\:pb-16{
     padding-bottom: 4rem;
+  }
+
+  .sm\:pl-0{
+    padding-left: 0px;
+  }
+
+  .sm\:pt-14{
+    padding-top: 3.5rem;
+  }
+
+  .sm\:pb-10{
+    padding-bottom: 2.5rem;
   }
 
   .sm\:text-center{
@@ -4382,19 +4413,14 @@ table.dataTable thead th, table.dataTable thead td {
     line-height: 2.25rem;
   }
 
-  .sm\:text-xs{
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
   .sm\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-  .sm\:text-base{
-    font-size: 1rem;
-    line-height: 1.5rem;
+  .sm\:text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 
   .sm\:leading-snug{
@@ -4485,11 +4511,11 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:order-2{
     order: 2;
   }
-    .md\:col-span-4{
-    grid-column: span 4 / span 4;
-  }
     .md\:col-span-2{
     grid-column: span 2 / span 2;
+  }
+    .md\:col-span-4{
+    grid-column: span 4 / span 4;
   }
     .md\:mt-2{
     margin-top: 0.5rem;
@@ -4524,12 +4550,12 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:w-6\/12{
     width: 50%;
   }
+    .md\:w-8\/12{
+    width: 66.666667%;
+  }
     .md\:w-fit{
     width: -moz-fit-content;
     width: fit-content;
-  }
-    .md\:w-8\/12{
-    width: 66.666667%;
   }
     .md\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4546,11 +4572,14 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:gap-10{
     gap: 2.5rem;
   }
+    .md\:gap-16{
+    gap: 4rem;
+  }
     .md\:gap-7{
     gap: 1.75rem;
   }
-    .md\:gap-16{
-    gap: 4rem;
+    .md\:gap-8{
+    gap: 2rem;
   }
     .md\:space-x-5 > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0;
@@ -4572,15 +4601,15 @@ table.dataTable thead th, table.dataTable thead td {
     margin-right: calc(1.75rem * var(--tw-space-x-reverse));
     margin-left: calc(1.75rem * calc(1 - var(--tw-space-x-reverse)));
   }
-    .md\:space-y-10 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-y-reverse: 0;
-    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
-  }
     .md\:space-y-16 > :not([hidden]) ~ :not([hidden]){
     --tw-space-y-reverse: 0;
     margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(4rem * var(--tw-space-y-reverse));
+  }
+    .md\:space-y-7 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.75rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
   }
     .md\:border-4{
     border-width: 4px;
@@ -4610,14 +4639,20 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:pt-0{
     padding-top: 0px;
   }
-    .md\:pb-20{
-    padding-bottom: 5rem;
-  }
     .md\:pb-16{
     padding-bottom: 4rem;
   }
-    .md\:pb-10{
-    padding-bottom: 2.5rem;
+    .md\:pl-3{
+    padding-left: 0.75rem;
+  }
+    .md\:pl-5{
+    padding-left: 1.25rem;
+  }
+    .md\:pt-24{
+    padding-top: 6rem;
+  }
+    .md\:pb-20{
+    padding-bottom: 5rem;
   }
     .md\:text-left{
     text-align: left;
@@ -4638,13 +4673,13 @@ table.dataTable thead th, table.dataTable thead td {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
-    .md\:text-base{
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
     .md\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+    .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
     .md\:leading-tight{
     line-height: 1.25;
