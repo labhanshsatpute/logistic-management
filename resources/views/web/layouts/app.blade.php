@@ -21,6 +21,12 @@
 
 <body>
 
+    <div class="h-auto w-full fixed z-[100] bg-white" id="preloader-div">
+        <div class="h-[113vh] w-full flex items-center justify-center">
+            <img src="{{asset('web/images/preloader.gif')}}" alt="preloader" class="h-[400px] w-auto">
+        </div>
+    </div>
+
     @include('web.common.header')
 
     @include('web.common.mobile-sidebar')
@@ -65,6 +71,14 @@
         });
     </script>
     @endif
+
+    <script>
+        window.addEventListener('load',function(){
+            setTimeout(() => {
+                document.getElementById('preloader-div').style.display = "none";
+            }, 1000);
+        });
+    </script>
 
 </body>
 
