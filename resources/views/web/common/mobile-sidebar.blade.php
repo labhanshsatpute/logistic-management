@@ -53,7 +53,7 @@
             </li>
 
             <li class="border-b">
-                <a href="{{--route('view.dashboard')--}}">
+                <a href="{{route('view.dashboard')}}">
                     <button class="w-full py-5 text-left">
                         <div class="flex items-center justify-between font-medium text-base">
                             My Acoount
