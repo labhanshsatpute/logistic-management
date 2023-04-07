@@ -11,6 +11,15 @@
         </div>
     </div>
 </section>
+<section class="py-6 border-b shadow-sm relative md:hidden sm:block">
+    <div class="container">
+        <ul class="flex items-center justify-start space-x-3">
+            <li><a href="{{ route('view.home') }}" class="link">Home</a></li>
+            <li><i data-feather="chevron-right" class="h-4 w-4 text-gray-700"></i></li>
+            <li><a href="{{ route('view.dashboard') }}" class="link">Dashboard</a></li>
+        </ul>
+    </div>
+</section>
 {{-- Page Cover & Breadcrumb Section (End) --}}
 
 {{-- Page Section (Start) --}}
