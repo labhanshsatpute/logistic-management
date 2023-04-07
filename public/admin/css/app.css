@@ -1970,6 +1970,12 @@ main{
 .mt-4{
   margin-top: 1rem;
 }
+.mb-4{
+  margin-bottom: 1rem;
+}
+.mb-5{
+  margin-bottom: 1.25rem;
+}
 .block{
   display: block;
 }
@@ -2211,6 +2217,11 @@ main{
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+.space-y-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 .overflow-hidden{
   overflow: hidden;
@@ -4477,6 +4488,11 @@ table.dataTable thead th, table.dataTable thead td {
     border-width: 2px;
   }
 
+  .sm\:border-x-0{
+    border-left-width: 0px;
+    border-right-width: 0px;
+  }
+
   .sm\:bg-\[rgba\(0\2c 59\2c 73\2c 0\.4\)\]{
     background-color: rgba(0,59,73,0.4);
   }
@@ -4578,6 +4594,14 @@ table.dataTable thead th, table.dataTable thead td {
 
   .sm\:pb-9{
     padding-bottom: 2.25rem;
+  }
+
+  .sm\:pt-0{
+    padding-top: 0px;
+  }
+
+  .sm\:pb-3{
+    padding-bottom: 0.75rem;
   }
 
   .sm\:text-center{
@@ -4829,6 +4853,11 @@ table.dataTable thead th, table.dataTable thead td {
     margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(4rem * var(--tw-space-y-reverse));
   }
+    .md\:space-y-10 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+  }
     .md\:border-4{
     border-width: 4px;
   }
@@ -4867,6 +4896,10 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:px-20{
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+    .md\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
     .md\:pt-24{
     padding-top: 6rem;

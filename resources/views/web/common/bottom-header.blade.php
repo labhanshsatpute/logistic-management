@@ -4,7 +4,7 @@
             <div class="flex items-center justify-between">
                 <ul class="flex items-center space-x-7 justify-start">
                     <li><a href="{{route('view.home')}}" class="text-base text-white hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">Home</a></li>
-                    <li><a href="#" class="text-base text-white hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">Schedule a Shippment</a></li>
+                    <li><a href="{{route('view.schedule.shippment')}}" class="text-base text-white hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">Schedule a Shippment</a></li>
                     <li><a href="#" class="text-base text-white hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">Locate Nearby Office</a></li>
                     <li><a href="{{route('view.dashboard')}}" class="text-base text-white hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">My Account</a></li>
                 </ul>

@@ -18,6 +18,7 @@ interface WebView {
 
     public function viewHome();
     public function viewDashboard();
+    public function viewScheduleShippment();
 
 }
 
@@ -32,6 +33,12 @@ class WebViewController extends Controller implements WebView
     // View Dashboard
     public function viewDashboard()
     {
-        return view('web.sections.dashboard.dashboard');
+        return view('web.sections.dashboard');
+    }
+
+    // View Schedule Shippment
+    public function viewScheduleShippment()
+    {
+        return view('web.sections.schedule-shippment');
     }
 }

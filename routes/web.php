@@ -53,10 +53,7 @@ Route::middleware(['auth'])->group(function () {
         return redirect()->route('view.main');
     })->name('logout');
 
-    Route::prefix('/dashboard')->group(function () {
-
-        Route::get('/',[WebViewController::class , 'viewDashboard'])->name('view.dashboard');
-        
-    });
+    Route::get('/dashboard',[WebViewController::class , 'viewDashboard'])->name('view.dashboard');
+    Route::get('/schedule-shippment',[WebViewController::class , 'viewScheduleShippment'])->name('view.schedule.shippment');
 
 });

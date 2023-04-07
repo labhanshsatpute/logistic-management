@@ -6,7 +6,7 @@
             </a>
         </li>
         <li>
-            <a href="{{route('view.dashboard')}}">
+            <a href="{{route('view.schedule.shippment')}}">
                 <button id="schedule-shippment-tab"><i data-feather="calendar"></i>Schedule a Shippment</button>
             </a>
         </li>
