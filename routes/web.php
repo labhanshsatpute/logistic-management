@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\WebAuthController;
+use App\Http\Controllers\Web\WebViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use App\Http\Controllers\Web\WebAuthController;
 |
 */
 
-Route::view('/', 'web.sections.main')->name('main');
+Route::get('/',[WebViewController::class , 'viewHome'])->name('view.home');
 
 Route::get('/random',function() {
     return rand(1111111111,9999999999);
@@ -38,3 +39,24 @@ Route::post('/forgot-password', [WebAuthController::class, 'handleForgotPassword
 
 Route::get('/reset-password/{token}', [WebAuthController::class, 'viewResetPassword'])->name('view.reset.password');
 Route::post('/reset-password/{token}', [WebAuthController::class, 'handleResetPassword'])->name('handle.reset.password');
+
+
+/*
+|--------------------------------------------------------------------------
+| Authorized Routes
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['auth'])->group(function () {
+
+    Route::post('logout', function() {
+        Auth::logout();
+        return redirect()->route('view.main');
+    })->name('logout');
+
+    Route::prefix('/dashboard')->group(function () {
+
+        Route::get('/',[WebViewController::class , 'viewDashboard'])->name('view.dashboard');
+        
+    });
+
+});

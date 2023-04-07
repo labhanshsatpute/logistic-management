@@ -3,7 +3,7 @@
         <div class="grid md:grid-cols-4 sm:grid-cols-1 md:gap-8 sm:gap-12">
 
             <figure class="space-y-5">
-                <a href="{{route('main')}}">
+                <a href="{{route('view.home')}}">
                     <img src="{{asset('web/images/footer-logo.png')}}" alt="logo" class="h-[50px] w-auto">
                 </a>
                 <div>

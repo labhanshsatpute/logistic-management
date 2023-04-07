@@ -26,7 +26,7 @@ class RedirectIfAuthenticated
                 return redirect(RouteServiceProvider::ADMIN);
             }
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                return redirect(RouteServiceProvider::USER);
             }
         }
 

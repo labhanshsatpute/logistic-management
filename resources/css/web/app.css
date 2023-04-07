@@ -217,3 +217,21 @@ input:read-only {
     @apply text-base text-gray-700 hover:text-web-ascent transition duration-500 ease-in-out hover:ease-in-out
 }
 /* Footer (End) */
+
+
+/* Dashboard */
+.dashboard-sidebar {
+    @apply sticky top-5
+}
+.dashboard-sidebar ul  {
+    @apply space-y-3
+}
+.dashboard-sidebar button {
+    @apply flex items-center justify-start whitespace-nowrap bg-web-ascent bg-opacity-10 px-4 py-3 w-full  font-medium text-base
+}
+.dashboard-sidebar button.active {
+    @apply border-l-4 border-l-web-ascent
+}
+.dashboard-sidebar button svg {
+    @apply h-4 w-4 mr-2 stroke-[2.5px]
+}
