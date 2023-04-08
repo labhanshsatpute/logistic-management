@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('shippments', function (Blueprint $table) {
+        Schema::create('shipments', function (Blueprint $table) {
             $table->bigIncrements('id')->from(100001);
             $table->foreignId('user_id')->references('id')->on('users')->nullable();
 

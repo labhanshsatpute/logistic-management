@@ -7,7 +7,7 @@
         @include('web.common.bottom-header')
         <div class="md:pt-32 md:pb-20 sm:py-20">
             <div class="container">
-                <h1 class="font-semibold text-white text-4xl">Schedule a Shippmet</h1>
+                <h1 class="font-semibold text-white text-4xl">Schedule a Shipment</h1>
             </div>
         </div>
     </section>
@@ -16,7 +16,7 @@
             <ul class="flex items-center justify-start space-x-3">
                 <li><a href="{{ route('view.home') }}" class="link">Home</a></li>
                 <li><i data-feather="chevron-right" class="h-4 w-4 text-gray-700"></i></li>
-                <li><a href="{{ route('view.dashboard') }}" class="link">Schedule a Shippmet</a></li>
+                <li><a href="{{ route('view.schedule.shipment') }}" class="link">Schedule a Shipment</a></li>
             </ul>
         </div>
     </section>
@@ -24,7 +24,7 @@
 
     {{-- Page Section (Start) --}}
     <section class="md:py-20 sm:py-0">
-        <form class="container" method="POST" action="{{route('handle.shippment.create')}}">
+        <form class="container" method="POST" action="{{route('handle.shipment.create')}}">
 
             @csrf
             
@@ -450,7 +450,7 @@
                     <figure class="bg-white md:border sm:border-x-0 md:shadow-md">
                         <div class="md:px-5 py-4 border-b">
                             <h1 class="font-semibold text-lg mb-1">Billing Summary</h1>
-                            <p class="text-xs text-gray-500">check your shippment billing summary and make payment</p>
+                            <p class="text-xs text-gray-500">check your shipment billing summary and make payment</p>
                         </div>
                         <div class="md:px-5 py-5 border-b">
                             <div class="grid md:grid-cols-2 sm:grid-cols-1 gap-5">
@@ -515,12 +515,12 @@
 
 @section('web-script')
     <script>
-        document.getElementById('schedule-shippment-tab').classList.add('active');
+        document.getElementById('schedule-shipment-tab').classList.add('active');
 
         const handleCalculateBill = () => {
             $.ajax({
                 type: "POST",
-                url: "{{ route('handle.calculate.shippment.bill') }}",
+                url: "{{ route('handle.calculate.shipment.bill') }}",
                 data: {
                     _token: "{{ csrf_token() }}",
                     package_weight: document.querySelector('input[name=package_weight]').value,

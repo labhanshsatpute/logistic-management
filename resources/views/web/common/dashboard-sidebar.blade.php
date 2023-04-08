@@ -2,27 +2,27 @@
     <ul>
         <li>
             <a href="{{route('view.dashboard')}}">
-                <button id="dashboard-tab"><i data-feather="user"></i>My Dashboard</button>
+                <button type="button" id="dashboard-tab"><i data-feather="user"></i>My Dashboard</button>
             </a>
         </li>
         <li>
-            <a href="{{route('view.schedule.shippment')}}">
-                <button id="schedule-shippment-tab"><i data-feather="calendar"></i>Schedule a Shippment</button>
-            </a>
-        </li>
-        <li>
-            <a href="{{route('view.dashboard')}}">
-                <button id="shippment-tab"><i data-feather="clipboard"></i>My Shippments</button>
+            <a href="{{route('view.schedule.shipment')}}">
+                <button type="button" id="schedule-shipment-tab"><i data-feather="calendar"></i>Schedule a Shipment</button>
             </a>
         </li>
         <li>
             <a href="{{route('view.dashboard')}}">
-                <button id="setting-tab"><i data-feather="settings"></i>Account Setting</button>
+                <button type="button" id="shipment-tab"><i data-feather="clipboard"></i>My Shipments</button>
             </a>
         </li>
         <li>
             <a href="{{route('view.dashboard')}}">
-                <button><i data-feather="log-out"></i>Logout</button>
+                <button type="button" id="setting-tab"><i data-feather="settings"></i>Account Setting</button>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('view.dashboard')}}">
+                <button type="button"><i data-feather="log-out"></i>Logout</button>
             </a>
         </li>
     </ul>        

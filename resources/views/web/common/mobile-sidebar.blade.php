@@ -43,10 +43,10 @@
             </li>
 
             <li class="border-b">
-                <a href="{{route('view.schedule.shippment')}}">
+                <a href="{{route('view.schedule.shipment')}}">
                     <button class="w-full py-5 text-left">
                         <div class="flex items-center justify-between font-medium text-base">
-                            Schedule a Shippment
+                            Schedule a Shipment
                         </div>
                     </button>
                 </a>

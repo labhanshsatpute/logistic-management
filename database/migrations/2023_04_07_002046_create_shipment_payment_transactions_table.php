@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('shippment_payment_transactions', function (Blueprint $table) {
+        Schema::create('shipment_payment_transactions', function (Blueprint $table) {
             $table->bigIncrements('id')->from(100001);
             $table->foreignId('user_id')->references('id')->on('users')->nullable();
-            $table->foreignId('shippment_id')->references('id')->on('shippments')->nullable();
+            $table->foreignId('shipment_id')->references('id')->on('shipments')->nullable();
             $table->string('token');
             $table->string('gateway');
-            $table->string('method');
+            $table->string('method')->nullable();
             $table->enum('status',['Pending','Failed','Completed'])->default('Pending');
             $table->string('transaction_id')->nullable();
             $table->double('amount',16,2);

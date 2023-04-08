@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\WebCreateController;
+use App\Http\Controllers\Web\WebUpdateController;
 use App\Http\Controllers\Web\WebUtilityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\WebAuthController;
@@ -56,9 +57,15 @@ Route::middleware(['auth'])->group(function () {
     })->name('logout');
 
     Route::get('/dashboard',[WebViewController::class , 'viewDashboard'])->name('view.dashboard');
-    Route::get('/schedule-shippment',[WebViewController::class , 'viewScheduleShippment'])->name('view.schedule.shippment');
-    Route::post('/shippment/create',[WebCreateController::class , 'handleShippmentCreate'])->name('handle.shippment.create');
+
+    Route::get('/schedule-shipment',[WebViewController::class , 'viewScheduleShipment'])->name('view.schedule.shipment');
+
+    Route::post('/shipment/create',[WebCreateController::class , 'handleShipmentCreate'])->name('handle.shipment.create');
+    Route::get('/shipments',[WebViewController::class , 'viewShipmentList'])->name('view.shipments');
+
+    Route::get('/shipment/payment/{token}',[WebViewController::class , 'viewShipmentPaymentRazorpay'])->name('view.shipment.payment.razorpay');
+    Route::post('/shipment/payment/{token}',[WebUpdateController::class , 'handleShipmentPaymentRazorpay'])->name('handle.shipment.payment.razorpay');
 
 });
 
-Route::post('/calculate-shippment-bill',[WebUtilityController::class , 'handleCalculateShippmentBill'])->name('handle.calculate.shippment.bill');
+Route::post('/calculate-shipment-bill',[WebUtilityController::class , 'handleCalculateShipmentBill'])->name('handle.calculate.shipment.bill');
