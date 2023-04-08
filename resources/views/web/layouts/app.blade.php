@@ -11,6 +11,7 @@
 
     {{-- Stylesheets --}}
     <link rel="stylesheet" href="{{asset('web/css/app.css')}}">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRm-puyhwAKWWpghbaEvch4QvNGDG4HSE&libraries=places&region=in"></script>
 
     {{-- Title --}}
     <title>{{env('APP_NAME')}} | Deliviring With Security </title>

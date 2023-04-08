@@ -238,3 +238,7 @@ input:read-only {
 .dashboard-sidebar button svg {
     @apply h-4 w-4 mr-2 stroke-[2.5px]
 }
+
+.pac-container {
+    margin-top: 36px !important;
+}
