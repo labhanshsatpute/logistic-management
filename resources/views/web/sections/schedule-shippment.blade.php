@@ -408,17 +408,6 @@
     <script>
         document.getElementById('schedule-shippment-tab').classList.add('active');
 
-        fetch('{{ url('web/json/cities.json') }}').then((res) => {
-            return res.json();
-        }).then((res) => {
-
-            const data = res.filter((item) => {
-                return item.admin_name == "Maharashtra";
-            });
-
-            console.log(data);
-        })
-
         $(document).ready(function() {
             
             var pickup_autocomplete = new google.maps.places.Autocomplete((document.querySelector('input[name=sender_address_street]')), {
@@ -429,31 +418,45 @@
             });
 
             google.maps.event.addListener(pickup_autocomplete, 'place_changed', function() {
-                var near_place = pickup_autocomplete.getPlace();
+                let near_place = pickup_autocomplete.getPlace();
 
-                const city = near_place.address_components.filter((item) => {
+                let city = near_place.address_components.filter((item) => {
                     return item.types[0] == "locality";
                 });
                 
-                document.querySelector('input[name=sender_address_city]').value = city[0].long_name;
+                if (city.length != 0) {
+                    document.querySelector('input[name=sender_address_city]').value = city[0].long_name;
+                }
 
-                const pincode = near_place.address_components.filter((item) => {
+                let pincode = near_place.address_components.filter((item) => {
                     return item.types[0] == "postal_code";
                 });
                 
-                document.querySelector('input[name=sender_address_pincode]').value = pincode[0].long_name;
+                if (pincode.length != 0) {
+                    document.querySelector('input[name=sender_address_pincode]').value = pincode[0].long_name;
+                }
 
-                const state = near_place.address_components.filter((item) => {
+                let state = near_place.address_components.filter((item) => {
                     return item.types[0] == "administrative_area_level_1";
                 });
                 
                 document.querySelector('input[name=sender_address_state]').value = state[0].long_name;
 
-                const country = near_place.address_components.filter((item) => {
+                let country = near_place.address_components.filter((item) => {
                     return item.types[0] == "country";
                 });
                 
                 document.querySelector('input[name=sender_address_country]').value = country[0].long_name;
+
+                let remove_string = `, ${city[0].long_name}, ${state[0].long_name}`;
+
+                if (pincode.length != 0) {
+                    if (near_place.formatted_address.includes(pincode[0].long_name)) {
+                        remove_string = `, ${city[0].long_name}, ${state[0].long_name} ${pincode[0].long_name}`;
+                    }
+                }
+
+                document.querySelector('input[name=sender_address_street]').value = near_place.formatted_address.replace(remove_string, '');
                 
             });
 
@@ -465,31 +468,45 @@
             });
 
             google.maps.event.addListener(delivery_autocomplete, 'place_changed', function() {
-                var near_place = delivery_autocomplete.getPlace();
+                let near_place = delivery_autocomplete.getPlace();
 
-                const city = near_place.address_components.filter((item) => {
+                let city = near_place.address_components.filter((item) => {
                     return item.types[0] == "locality";
                 });
-                
-                document.querySelector('input[name=reciever_address_city]').value = city[0].long_name;
 
-                const pincode = near_place.address_components.filter((item) => {
+                if (city.length != 0) {
+                    document.querySelector('input[name=reciever_address_city]').value = city[0].long_name;
+                }
+
+                let pincode = near_place.address_components.filter((item) => {
                     return item.types[0] == "postal_code";
                 });
                 
-                document.querySelector('input[name=reciever_address_pincode]').value = pincode[0].long_name;
+                if (pincode.length != 0) {
+                    document.querySelector('input[name=reciever_address_pincode]').value = pincode[0].long_name;
+                }
 
-                const state = near_place.address_components.filter((item) => {
+                let state = near_place.address_components.filter((item) => {
                     return item.types[0] == "administrative_area_level_1";
                 });
                 
                 document.querySelector('input[name=reciever_address_state]').value = state[0].long_name;
 
-                const country = near_place.address_components.filter((item) => {
+                let country = near_place.address_components.filter((item) => {
                     return item.types[0] == "country";
                 });
                 
                 document.querySelector('input[name=reciever_address_country]').value = country[0].long_name;
+
+                let remove_string = `, ${city[0].long_name}, ${state[0].long_name}`;
+
+                if (pincode.length != 0) {
+                    if (near_place.formatted_address.includes(pincode[0].long_name)) {
+                        remove_string = `, ${city[0].long_name}, ${state[0].long_name} ${pincode[0].long_name}`;
+                    }
+                }
+
+                document.querySelector('input[name=reciever_address_street]').value = near_place.formatted_address.replace(remove_string, '');
                 
             });
 
