@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Web\WebCreateController;
+use App\Http\Controllers\Web\WebUtilityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\WebAuthController;
 use App\Http\Controllers\Web\WebViewController;
@@ -55,5 +57,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard',[WebViewController::class , 'viewDashboard'])->name('view.dashboard');
     Route::get('/schedule-shippment',[WebViewController::class , 'viewScheduleShippment'])->name('view.schedule.shippment');
+    Route::post('/shippment/create',[WebCreateController::class , 'handleShippmentCreate'])->name('handle.shippment.create');
 
 });
+
+Route::post('/calculate-shippment-bill',[WebUtilityController::class , 'handleCalculateShippmentBill'])->name('handle.calculate.shippment.bill');

@@ -1560,6 +1560,9 @@ body {
 .h-16{
   height: 4rem;
 }
+.h-2{
+  height: 0.5rem;
+}
 .h-24{
   height: 6rem;
 }
@@ -1638,6 +1641,11 @@ body {
 }
 .resize{
   resize: both;
+}
+.appearance-none{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .flex-col{
   flex-direction: column;
@@ -1936,11 +1944,20 @@ body {
 .pb-2{
   padding-bottom: 0.5rem;
 }
+.pt-3{
+  padding-top: 0.75rem;
+}
 .text-left{
   text-align: left;
 }
 .text-center{
   text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.align-bottom{
+  vertical-align: bottom;
 }
 .text-2xl{
   font-size: 1.5rem;
@@ -3017,7 +3034,7 @@ input:read-only{
 }
 
 .pac-container {
-    margin-top: 36px !important;
+    margin-top: 70px !important;
 }
 
 .after\:absolute::after{
@@ -3125,6 +3142,11 @@ input:read-only{
   .dark\:border-gray-600{
     --tw-border-opacity: 1;
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
+  }
+
+  .dark\:bg-gray-300{
+    --tw-bg-opacity: 1;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity));
   }
 
   .dark\:bg-gray-700{
@@ -3311,6 +3333,11 @@ input:read-only{
   .sm\:py-10{
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+  }
+
+  .sm\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .sm\:pt-14{
@@ -3598,6 +3625,9 @@ input:read-only{
   }
     .md\:p-4{
     padding: 1rem;
+  }
+    .md\:p-5{
+    padding: 1.25rem;
   }
     .md\:py-20{
     padding-top: 5rem;

@@ -42,7 +42,6 @@ return new class extends Migration
             $table->string('reciever_address_country');
 
             $table->string('package_name');
-            $table->string('package_image')->nullable();
             $table->text('package_summary')->nullable();
             $table->enum('package_type',['Grocery','Food & Vegetable','Electronics','Home Appliances','Furniture','Handle With Care','Vaccine','Medicine','Liquor','Other']);
 
