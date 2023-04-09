@@ -42,7 +42,9 @@
 
     @include('web.common.footer')
 
-    <form action="{{ route('handle.logout') }}" id="logout-form">@csrf</form>
+    @auth
+    <form action="{{ route('handle.logout') }}" method="POST" id="logout-form">@csrf</form>
+    @endauth
 
     {{-- Script --}}
     <script src="{{asset('web/js/app.js')}}"></script>
@@ -67,11 +69,13 @@
 
     @if (session('message'))
     <script defer>
-        swal({
-            icon: "{{session('message')['status']}}",
-            title: "{{session('message')['title']}}",
-            text: "{{session('message')['description']}}",
-        });
+        setTimeout(() => {
+            swal({
+                icon: "{{session('message')['status']}}",
+                title: "{{session('message')['title']}}",
+                text: "{{session('message')['description']}}",
+            });
+        }, 600);
     </script>
     @endif
 
@@ -79,9 +83,12 @@
         window.addEventListener('load',function(){
             setTimeout(() => {
                 document.getElementById('preloader-div').style.display = "none";
-            }, 1000);
+            }, 500);
         });
+    </script>
 
+    @auth
+        <script>
         const handleLogout = () => {
             swal({
                     title: "Are you sure?",
@@ -96,7 +103,8 @@
                     }
                 });
         }
-    </script>
+        </script>
+    @endauth
 
 </body>
 

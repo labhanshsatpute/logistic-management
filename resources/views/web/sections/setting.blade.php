@@ -34,7 +34,7 @@
 
             <div class="md:col-span-9 md:space-y-10 sm:space-y-5">
 
-                <form class="bg-white md:border sm:border-x-0 md:shadow-md" method="POST" action="{{route('handle.account.information.update')}}">
+                <form class="bg-white md:border sm:border-x-0 md:shadow-md" method="POST" action="{{route('handle.account.information.update')}}" enctype="multipart/form-data">
                     <div class="md:px-5 py-4 border-b">
                         <h1 class="font-semibold text-lg mb-1">Account Information</h1>
                         <p class="text-xs text-gray-500">Update your account information</p>
