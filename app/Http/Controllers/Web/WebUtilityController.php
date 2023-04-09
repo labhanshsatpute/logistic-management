@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Validator;
 
 interface WebUtility 
 {
-    public static function handleCalculateShippmentBill(Request $request);
+    public static function handleCalculateShipmentBill(Request $request);
 }
 
 class WebUtilityController extends Controller implements WebUtility
@@ -27,7 +27,7 @@ class WebUtilityController extends Controller implements WebUtility
     | Handle Calculate Bill
     |--------------------------------------------------------------------------
     */
-    public static function handleCalculateShippmentBill(Request $request)
+    public static function handleCalculateShipmentBill(Request $request)
     {
         $validation = Validator::make($request->all(),[
             'sender_address_city' => ['nullable','string'],
