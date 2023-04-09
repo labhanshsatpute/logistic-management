@@ -393,7 +393,7 @@
                                         </div>
                                         <input name="package_length" value="{{ old('package_length', 5) }}"
                                             type="range" step="1"
-                                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg dark:bg-gray-300"
+                                            class="px-3 rounded-md"
                                             min="5" max="60" oninput="package_length_output.value=value">
                                     </div>
                                 </div>
@@ -408,7 +408,7 @@
                                         </div>
                                         <input name="package_width" value="{{ old('package_width', 5) }}" type="range"
                                             step="1"
-                                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg dark:bg-gray-300"
+                                            class="px-3 rounded-md"
                                             min="5" max="60" oninput="package_width_output.value=value">
                                     </div>
                                 </div>
@@ -423,7 +423,7 @@
                                         </div>
                                         <input name="package_height" value="{{ old('package_height', 2) }}"
                                             type="range" step="1"
-                                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg dark:bg-gray-300"
+                                            class="px-3 rounded-md"
                                             min="2" max="60" oninput="package_height_output.value=value">
                                     </div>
                                 </div>
@@ -438,7 +438,7 @@
                                         </div>
                                         <input onchange="handleCalculateBill()" name="package_weight" value="{{ old('package_weight', 0.25) }}"
                                             type="range" step="0.25"
-                                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg dark:bg-gray-300"
+                                            class="px-3 rounded-md"
                                             min="0.25" max="30" oninput="package_weight_output.value=value">
                                     </div>
                                 </div>

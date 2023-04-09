@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Shipment;
 use App\Models\ShipmentPaymentTransaction;
 use Illuminate\Http\Request;
 
@@ -55,6 +56,13 @@ class WebViewController extends Controller implements WebView
         else {
             abort(419);
         }
+    }
+
+    // View Schedule Shipment
+    public function viewShipmentList()
+    {
+        $shipments = Shipment::where('user_id',auth()->user()->id)->orderBy('created_at','DESC')->get();
+        return view('web.sections.shipment-list',['shipments' => $shipments]);
     }
 
 

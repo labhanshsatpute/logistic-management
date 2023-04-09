@@ -54,7 +54,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('logout', function() {
         Auth::logout();
         return redirect()->route('view.main');
-    })->name('logout');
+    })->name('handle.logout');
 
     Route::get('/dashboard',[WebViewController::class , 'viewDashboard'])->name('view.dashboard');
 

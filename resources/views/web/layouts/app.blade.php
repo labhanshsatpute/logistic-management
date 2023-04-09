@@ -42,6 +42,8 @@
 
     @include('web.common.footer')
 
+    <form action="{{ route('handle.logout') }}" id="logout-form">@csrf</form>
+
     {{-- Script --}}
     <script src="{{asset('web/js/app.js')}}"></script>
     <script src="{{asset('web/js/swiper.min.js')}}"></script>
@@ -79,6 +81,21 @@
                 document.getElementById('preloader-div').style.display = "none";
             }, 1000);
         });
+
+        const handleLogout = () => {
+            swal({
+                    title: "Are you sure?",
+                    text: "Once clicked ok you will logged out",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#logout-form').submit();
+                    }
+                });
+        }
     </script>
 
 </body>

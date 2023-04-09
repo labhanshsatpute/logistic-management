@@ -242,3 +242,63 @@ input:read-only {
 .pac-container {
     margin-top: 70px !important;
 }
+
+/* Sweet Alerts (Start) */
+.swal-modal {
+    @apply rounded-none border shadow-[0px_0px_15x_rgba(0,0,0,1)]
+}
+.swal-title {
+    @apply text-2xl text-black font-semibold
+}
+.swal-text {
+    @apply text-sm text-slate-600 text-center
+}
+.swal-button:focus {
+    @apply shadow-none border-none outline-none
+}
+.swal-button.swal-button--confirm {
+    @apply btn-ascent-md rounded-none
+}
+.swal-button.swal-button--cancel {
+    @apply btn-light-md rounded-none
+}
+.swal-icon--success__line {
+    @apply bg-green-500
+}
+.swal-icon--success__ring {
+    @apply border-[#4bc10678]
+}
+.swal-footer {
+    @apply mb-5 text-center
+}
+/* Sweet Alerts (End) */
+
+input[type=range] {
+    height: 38px;
+    -webkit-appearance: none;
+    margin: 10px 0px;
+    width: 100%;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000;
+    background: #003B49;
+    border-radius: 5px;
+    border: 1px solid #000000;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 30px;
+    width: 15px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -11px;
+  }

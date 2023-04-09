@@ -1,5 +1,6 @@
 import Alpine from 'alpinejs';
 import $ from "jquery";
+import swal from 'sweetalert';
 
 window.Alpine = Alpine;
 

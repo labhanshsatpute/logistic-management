@@ -2033,6 +2033,9 @@ main{
 .h-16{
   height: 4rem;
 }
+.h-2{
+  height: 0.5rem;
+}
 .h-24{
   height: 6rem;
 }
@@ -2051,9 +2054,6 @@ main{
 }
 .h-\[100px\]{
   height: 100px;
-}
-.h-2{
-  height: 0.5rem;
 }
 .w-full{
   width: 100%;
@@ -2196,6 +2196,11 @@ main{
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
+.space-y-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
 .overflow-hidden{
   overflow: hidden;
 }
@@ -2303,6 +2308,10 @@ main{
   --tw-bg-opacity: 1;
   background-color: rgb(58 12 163 / var(--tw-bg-opacity));
 }
+.bg-gray-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
 .bg-opacity-50{
   --tw-bg-opacity: 0.5;
 }
@@ -2399,9 +2408,9 @@ main{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.py-2{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 .pb-4{
   padding-bottom: 1rem;
@@ -4267,14 +4276,14 @@ table.dataTable thead th, table.dataTable thead td {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 
-  .dark\:bg-gray-700{
-    --tw-bg-opacity: 1;
-    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-  }
-
   .dark\:bg-gray-300{
     --tw-bg-opacity: 1;
     background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+  }
+
+  .dark\:bg-gray-700{
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 }
 @media (min-width: 300px){
@@ -4513,6 +4522,11 @@ table.dataTable thead th, table.dataTable thead td {
   .sm\:text-xs{
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .sm\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .sm\:leading-snug{
@@ -4810,6 +4824,10 @@ table.dataTable thead th, table.dataTable thead td {
     .md\:text-base{
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+    .md\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
     .md\:leading-tight{
     line-height: 1.25;

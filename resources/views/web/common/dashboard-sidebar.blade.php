@@ -11,8 +11,8 @@
             </a>
         </li>
         <li>
-            <a href="{{route('view.dashboard')}}">
-                <button type="button" id="shipment-tab"><i data-feather="clipboard"></i>My Shipments</button>
+            <a href="{{route('view.shipments')}}">
+                <button type="button" id="shipments-tab"><i data-feather="clipboard"></i>My Shipments</button>
             </a>
         </li>
         <li>
@@ -21,9 +21,7 @@
             </a>
         </li>
         <li>
-            <a href="{{route('view.dashboard')}}">
-                <button type="button"><i data-feather="log-out"></i>Logout</button>
-            </a>
+            <button type="button" onclick="handleLogout()"><i data-feather="log-out"></i>Logout</button>
         </li>
     </ul>        
 </aside>
