@@ -16,7 +16,7 @@
             </a>
         </li>
         <li>
-            <a href="{{route('view.dashboard')}}">
+            <a href="{{route('view.setting')}}">
                 <button type="button" id="setting-tab"><i data-feather="settings"></i>Account Setting</button>
             </a>
         </li>

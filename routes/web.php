@@ -63,8 +63,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/shipment/create',[WebCreateController::class , 'handleShipmentCreate'])->name('handle.shipment.create');
     Route::get('/shipments',[WebViewController::class , 'viewShipmentList'])->name('view.shipments');
 
+    Route::get('/account-setting',[WebViewController::class , 'viewSetting'])->name('view.setting');
+
     Route::get('/shipment/payment/{token}',[WebViewController::class , 'viewShipmentPaymentRazorpay'])->name('view.shipment.payment.razorpay');
     Route::post('/shipment/payment/{token}',[WebUpdateController::class , 'handleShipmentPaymentRazorpay'])->name('handle.shipment.payment.razorpay');
+
+    Route::post('/account-information', [WebUpdateController::class, 'handleAccountInformationUpdate'])->name('handle.account.information.update');
+    Route::post('/account-password', [WebUpdateController::class, 'handleAccountPasswordUpdate'])->name('handle.account.password.update');
 
 });
 

@@ -22,6 +22,7 @@ interface WebView {
     public function viewDashboard();
     public function viewScheduleShipment();
     public function viewShipmentPaymentRazorpay($token);
+    public function viewSetting();
 
 }
 
@@ -65,5 +66,10 @@ class WebViewController extends Controller implements WebView
         return view('web.sections.shipment-list',['shipments' => $shipments]);
     }
 
+    // View Setting
+    public function viewSetting()
+    {
+        return view('web.sections.setting');
+    }
 
 }

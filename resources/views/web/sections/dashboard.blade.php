@@ -43,7 +43,7 @@
                           <p class="text-gray-500 text-sm flex items-center"><i data-feather="phone" class="h-4 w-4 mr-1 mb-[1px]"></i> {{Auth::user()->phone}}</p>
                         </div>
                         <div>
-                          <a href="#" class="btn-light-md flex items-center justify-center w-fit"><i data-feather="edit" class="h-4 w-4 mb-[1px] mr-2"></i> Edit Information</a>
+                          <a href="{{route('view.setting')}}" class="btn-light-md flex items-center justify-center w-fit"><i data-feather="edit" class="h-4 w-4 mb-[1px] mr-2"></i> Edit Information</a>
                         </div>
                       </div>
                 </figure>
