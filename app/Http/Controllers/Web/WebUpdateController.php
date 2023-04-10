@@ -58,7 +58,11 @@ class WebUpdateController extends Controller implements WebUpdate
                 $shipment->payment_status = "Paid";
                 $shipment->update();
                 
-                return redirect()->route('view.dashboard');
+                return redirect()->route('view.dashboard')->with('message', [
+                    'status' => 'success',
+                    'title' => 'Shipment Booked',
+                    'description' => 'Your shipment is successfully booked, you will recieve a confirmation mail soon.'
+                ]);
 
             } catch (Exception $e) {
                 dd($e->getMessage());

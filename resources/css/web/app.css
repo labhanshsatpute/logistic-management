@@ -273,6 +273,39 @@ input:read-only {
 }
 /* Sweet Alerts (End) */
 
+/* Alert Boxes (Start) */
+.alert-success-sm {
+    @apply px-3 py-2 bg-green-200 text-green-900 rounded flex items-center justify-center space-x-3 text-xs font-medium
+}
+.alert-success-md {
+    @apply px-3 py-2 bg-green-200 text-green-900 rounded flex items-center justify-center space-x-3 text-sm font-medium
+}
+.alert-success-lg {
+    @apply px-3 py-2 bg-green-200 text-green-900 rounded flex items-center justify-center space-x-3 text-lg font-medium
+}
+
+.alert-danger-sm {
+    @apply px-3 py-2 bg-red-200 text-red-900 rounded flex items-center justify-center space-x-3 text-xs font-medium
+}
+.alert-danger-md {
+    @apply px-3 py-2 bg-red-200 text-red-900 rounded flex items-center justify-center space-x-3 text-sm font-medium
+}
+.alert-danger-lg {
+    @apply px-3 py-2 bg-red-200 text-red-900 rounded flex items-center justify-center space-x-3 text-lg font-medium
+}
+
+.alert-warning-sm {
+    @apply px-3 py-2 bg-yellow-200 text-yellow-900 rounded flex items-center justify-center space-x-3 text-xs font-medium
+}
+.alert-warning-md {
+    @apply px-3 py-2 bg-yellow-200 text-yellow-900 rounded flex items-center justify-center space-x-3 text-sm font-medium
+}
+.alert-warning-lg {
+    @apply px-3 py-2 bg-yellow-200 text-yellow-900 rounded flex items-center justify-center space-x-3 text-lg font-medium
+}
+
+/* Alert Boxes (Start) */
+
 input[type=range] {
     height: 38px;
     -webkit-appearance: none;

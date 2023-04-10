@@ -2033,9 +2033,6 @@ main{
 .h-16{
   height: 4rem;
 }
-.h-2{
-  height: 0.5rem;
-}
 .h-24{
   height: 6rem;
 }
@@ -2115,10 +2112,8 @@ main{
 .resize{
   resize: both;
 }
-.appearance-none{
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+.list-disc{
+  list-style-type: disc;
 }
 .flex-col{
   flex-direction: column;
@@ -2196,15 +2191,15 @@ main{
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
-.space-y-10 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
-}
 .space-x-5 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 .overflow-hidden{
   overflow: hidden;
@@ -2313,10 +2308,6 @@ main{
   --tw-bg-opacity: 1;
   background-color: rgb(58 12 163 / var(--tw-bg-opacity));
 }
-.bg-gray-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
 .bg-opacity-50{
   --tw-bg-opacity: 0.5;
 }
@@ -2405,6 +2396,10 @@ main{
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2412,10 +2407,6 @@ main{
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 .pb-4{
   padding-bottom: 1rem;
@@ -2437,6 +2428,9 @@ main{
 }
 .pt-3{
   padding-top: 0.75rem;
+}
+.pl-4{
+  padding-left: 1rem;
 }
 .text-left{
   text-align: left;
@@ -4281,11 +4275,6 @@ table.dataTable thead th, table.dataTable thead td {
     border-color: rgb(75 85 99 / var(--tw-border-opacity));
   }
 
-  .dark\:bg-gray-300{
-    --tw-bg-opacity: 1;
-    background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-  }
-
   .dark\:bg-gray-700{
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
@@ -4414,6 +4403,10 @@ table.dataTable thead th, table.dataTable thead td {
   .sm\:border-x-0{
     border-left-width: 0px;
     border-right-width: 0px;
+  }
+
+  .sm\:border-b{
+    border-bottom-width: 1px;
   }
 
   .sm\:bg-\[rgba\(0\2c 59\2c 73\2c 0\.4\)\]{
@@ -4768,6 +4761,9 @@ table.dataTable thead th, table.dataTable thead td {
   }
     .md\:p-5{
     padding: 1.25rem;
+  }
+    .md\:p-9{
+    padding: 2.25rem;
   }
     .md\:py-20{
     padding-top: 5rem;

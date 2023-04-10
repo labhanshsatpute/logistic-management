@@ -32,8 +32,37 @@
                 @include('web.common.dashboard-sidebar')
             </div>
 
-            <div class="md:col-span-9">
+            <div class="md:col-span-9 md:space-y-10">
 
+                @foreach ($shipments as $shipment)
+                <div class="md:border sm:border-b w-full md:p-9 sm:py-5 rounded-md space-y-3">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <h1 class="font-semibold md:text-xl sm:text-lg">Shippment ID - #{{$shipment->id}}</h1>
+                            
+                                @switch($shipment->status)
+                                    @case('Placed')
+                                        <p class="alert-warning-sm">Shipment Placed</p>
+                                        @break
+                                    @case('Confirmed')
+                                        <p class="alert-success-sm">Shipment Confirmed</p>
+                                        @break
+                                    @case('Cancelled')
+                                        <p class="alert-danger-sm">Shipment Cancelled</p>
+                                        @break
+                                @endswitch
+                                
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-sm text-slate-800 flex items-center justify-start mb-1">Deliver to {{$shipment->reciever_name}}</p>
+                            <p class="text-sm text-slate-800 flex items-center justify-start mb-1">{{$shipment->reciever_email}}</p>
+                            <p class="text-sm text-slate-800 flex items-center justify-start mb-1">{{$shipment->reciever_phone_primary}}</p>
+                        
+                            <p class="text-base font-medium text-slate-800 flex items-center justify-start mb-1">Total : {{env('APP_CURRENCY')}}{{number_format($shipment->payment_total,2)}}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
                 
             </div>
 
