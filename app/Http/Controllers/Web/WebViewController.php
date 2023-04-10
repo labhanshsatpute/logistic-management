@@ -37,7 +37,8 @@ class WebViewController extends Controller implements WebView
     // View Dashboard
     public function viewDashboard()
     {
-        return view('web.sections.dashboard');
+        $upcoming_shipment = Shipment::where('user_id',auth()->user()->id)->orderBy('created_at','DESC')->first();
+        return view('web.sections.dashboard',['upcoming_shipment' => $upcoming_shipment]);
     }
 
     // View Schedule Shipment

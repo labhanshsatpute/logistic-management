@@ -31,7 +31,8 @@
                 @include('web.common.dashboard-sidebar')
             </div>
 
-            <div class="md:col-span-9">
+            <div class="md:col-span-9 md:space-y-10 sm:space-y-5">
+
                 <figure class="bg-white border md:shadow-md">
                     <div class="bg-web-ascent-dark md:px-20 sm:px-10 relative py-20 overflow-visible" style="background-image: url('/web/images/account-bg.svg')">
                         <img src="{{ is_null(auth()->user()->profile) ? asset('web/images/default-profile.png') : asset('storage/'. auth()->user()->profile)}}" alt="profile-img" class="h-[130px] w-[130px] rounded-full absolute z-20 -bottom-1/3 bg-white ring-8 ring-gray-600" />
@@ -47,6 +48,53 @@
                         </div>
                       </div>
                 </figure>
+
+                @if ($upcoming_shipment)
+                <figure class="bg-white md:border sm:border-x-0 md:shadow-md">
+                    <div class="md:px-5 py-4 border-b">
+                        <h1 class="font-semibold text-lg mb-1">Upcoming Pickups</h1>
+                        <p class="text-xs text-gray-500">Check your upcoming pickups of shipments</p>
+                    </div>
+                    <div class="md:px-5 py-5 border-b">
+                        <div class="space-y-2">
+                            <div class="space-y-3">
+
+                                <div>
+                                    <h1 class="font-medium text-base mb-1">Pickup Information</h1>
+                                    <div class="space-y-1">
+                                        <p class="text-sm text-slate-800 flex items-center justify-start mb-1">Date : {{date('D d M Y',strtotime($upcoming_shipment->pickup_date))}}</p>
+                                        <p class="text-sm text-slate-800 flex items-center justify-start mb-1">Pickup Slot : {{$upcoming_shipment->pickup_slot}}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h1 class="font-medium text-base mb-1">Deliver to</h1>
+                                    <div class="space-y-1">
+                                        <p class="text-sm text-slate-800 flex items-center justify-start mb-1">{{$upcoming_shipment->reciever_name}}</p>
+                                        <p class="text-sm text-slate-800 flex items-center justify-start mb-1">{{$upcoming_shipment->reciever_email}}, {{$upcoming_shipment->reciever_phone_primary}}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h1 class="font-medium text-base mb-1">Address</h1>
+                                    <div class="space-y-1">
+                                        <p class="text-sm text-slate-800 flex items-center justify-start mb-1">
+                                            {{$upcoming_shipment->reciever_address_home}} {{$upcoming_shipment->reciever_address_street}}, {{$upcoming_shipment->reciever_address_city}} -  {{$upcoming_shipment->reciever_address_pincode}}</p>
+                                        <p class="text-sm text-slate-800 flex items-center justify-start mb-1">
+                                            {{$upcoming_shipment->reciever_address_state}}, {{$upcoming_shipment->reciever_address_country}}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-base font-medium text-slate-800 flex items-center justify-start mb-1">Amount : {{env('APP_CURRENCY')}}{{number_format($upcoming_shipment->payment_total,2)}}</p>
+                                </div>
+                                <div class="pt-2">
+                                    <a href="#" class="btn-light-sm">View Shipment Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                @endif
+                
+
             </div>
 
         </div>

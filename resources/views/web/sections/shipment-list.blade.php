@@ -38,7 +38,7 @@
                 <div class="md:border sm:border-b w-full md:p-9 sm:py-5 rounded-md space-y-3">
                     <div class="space-y-2">
                         <div class="flex items-center justify-between">
-                            <h1 class="font-semibold md:text-xl sm:text-lg">Shippment ID - #{{$shipment->id}}</h1>
+                            <h1 class="font-semibold md:text-xl sm:text-lg">Shipment ID - {{$shipment->id}}</h1>
                             
                                 @switch($shipment->status)
                                     @case('Placed')
@@ -53,12 +53,29 @@
                                 @endswitch
                                 
                         </div>
-                        <div class="space-y-2">
-                            <p class="text-sm text-slate-800 flex items-center justify-start mb-1">Deliver to {{$shipment->reciever_name}}</p>
-                            <p class="text-sm text-slate-800 flex items-center justify-start mb-1">{{$shipment->reciever_email}}</p>
-                            <p class="text-sm text-slate-800 flex items-center justify-start mb-1">{{$shipment->reciever_phone_primary}}</p>
-                        
-                            <p class="text-base font-medium text-slate-800 flex items-center justify-start mb-1">Total : {{env('APP_CURRENCY')}}{{number_format($shipment->payment_total,2)}}</p>
+                        <div class="space-y-3">
+                            <div>
+                                <h1 class="font-medium text-base mb-1">Deliver to</h1>
+                                <div class="space-y-1">
+                                    <p class="text-sm text-slate-800 flex items-center justify-start mb-1">{{$shipment->reciever_name}}</p>
+                                    <p class="text-sm text-slate-800 flex items-center justify-start mb-1">{{$shipment->reciever_email}}, {{$shipment->reciever_phone_primary}}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h1 class="font-medium text-base mb-1">Address</h1>
+                                <div class="space-y-1">
+                                    <p class="text-sm text-slate-800 flex items-center justify-start mb-1">
+                                        {{$shipment->reciever_address_home}} {{$shipment->reciever_address_street}}, {{$shipment->reciever_address_city}} -  {{$shipment->reciever_address_pincode}}</p>
+                                    <p class="text-sm text-slate-800 flex items-center justify-start mb-1">
+                                        {{$shipment->reciever_address_state}}, {{$shipment->reciever_address_country}}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-base font-medium text-slate-800 flex items-center justify-start mb-1">Amount : {{env('APP_CURRENCY')}}{{number_format($shipment->payment_total,2)}}</p>
+                            </div>
+                            <div class="pt-2">
+                                <a href="#" class="btn-light-sm">View Order Details</a>
+                            </div>
                         </div>
                     </div>
                 </div>
