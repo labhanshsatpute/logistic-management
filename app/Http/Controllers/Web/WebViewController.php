@@ -73,4 +73,34 @@ class WebViewController extends Controller implements WebView
         return view('web.sections.setting');
     }
 
+    // View About
+    public function viewAbout()
+    {
+        return view('web.sections.about');
+    }
+
+    // View Career
+    public function viewCareer()
+    {
+        return view('web.sections.careers');
+    }
+
+    // View Customer Support
+    public function viewCustomerSupport()
+    {
+        return view('web.sections.customer-support');
+    }
+
+    // View Locate Office
+    public function viewLocateOffice()
+    {
+        return view('web.sections.locate-office');
+    }
+
+    // View Privacy Policy
+    public function viewPrivacyPolicy()
+    {
+        return view('web.sections.privacy-policy');
+    }
+
 }

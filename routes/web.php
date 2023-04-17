@@ -19,6 +19,13 @@ use App\Http\Controllers\Web\WebViewController;
 */
 
 Route::get('/',[WebViewController::class , 'viewHome'])->name('view.home');
+Route::get('/about',[WebViewController::class , 'viewAbout'])->name('view.about');
+Route::get('/careers',[WebViewController::class , 'viewCareer'])->name('view.career');
+Route::get('/customer-support',[WebViewController::class , 'viewCustomerSupport'])->name('view.customer.support');
+Route::get('/locate-office',[WebViewController::class , 'viewLocateOffice'])->name('view.locate.office');
+Route::get('/privacy-policy',[WebViewController::class , 'viewPrivacyPolicy'])->name('view.privacy.policy');
+Route::get('/services',[WebViewController::class , 'viewServices'])->name('view.services');
+Route::get('/terms-conditions',[WebViewController::class , 'viewTermsConditions'])->name('view.terms.condition');
 
 Route::get('/random',function() {
     return rand(1111111111,9999999999);
