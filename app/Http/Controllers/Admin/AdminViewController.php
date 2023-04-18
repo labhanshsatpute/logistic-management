@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Branch;
+use App\Models\Shipment;
 
 interface AdminView {
 
@@ -19,6 +20,9 @@ interface AdminView {
     public function viewBranchList();
     public function viewBranchCreate();
     public function viewBranchUpdate($id);
+
+    public function viewShipmentList();
+    public function viewShipmentUpdate($id);
 }
 
 class AdminViewController extends Controller implements AdminView
@@ -96,6 +100,24 @@ class AdminViewController extends Controller implements AdminView
         $branch = Branch::find($id);
         return view('admin.sections.branch.branch-update',[
             'branch' => $branch
+        ]);
+    }
+
+    /** View Shipment List **/
+    public function viewShipmentList()
+    {
+        $shipments = Shipment::all();
+        return view('admin.sections.shipment.shipment-list',[
+            'shipments' => $shipments
+        ]);
+    }
+
+    /** View Shipment Update **/
+    public function viewShipmentUpdate($id)
+    {
+        $shipment = Shipment::find($id);
+        return view('admin.sections.shipment.shipment-update',[
+            'shipment' => $shipment
         ]);
     }
 

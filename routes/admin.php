@@ -38,6 +38,14 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::put('/status', [AdminAPIController::class, 'handleBranchStatus'])->name('admin.handle.branch.status');
     });
 
+    Route::prefix('shipment')->group(function () {
+        Route::get('/list', [AdminViewController::class, 'viewShipmentList'])->name('admin.view.shipment.list');
+        Route::get('/update/{id}', [AdminViewController::class, 'viewShipmentUpdate'])->name('admin.view.shipment.update');
+        Route::post('/update/{id}', [AdminUpdateController::class, 'handleShipmentUpdate'])->name('admin.handle.shipment.update');
+        Route::get('/delete/{id}', [AdminDeleteController::class, 'handleShipmentDelete'])->name('admin.handle.shipment.delete');
+    });
+
+
     Route::prefix('admin-access')->group(function () {
         Route::get('/list', [AdminViewController::class, 'viewAdminList'])->name('admin.view.admin.list');
         Route::get('/create', [AdminViewController::class, 'viewAdminCreate'])->name('admin.view.admin.create');

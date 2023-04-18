@@ -14,6 +14,9 @@
             <li>
                 <a href="{{route('admin.view.dashboard')}}" class="sidebar-tab" id="dashboard-tab"> <i data-feather="activity"></i><span>Dashboard</span></a>
             </li>
+            <li>
+                <a href="{{route('admin.view.shipment.list')}}" class="sidebar-tab" id="shipment-tab"> <i data-feather="truck"></i> <span>Shipments</span></a>
+            </li>
             <hr>
             <li>
                 <a href="{{route('admin.view.admin.list')}}" class="sidebar-tab" id="admin-tab"> <i data-feather="key"></i> <span>Admin Access</span></a>

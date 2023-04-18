@@ -50,7 +50,7 @@ return new class extends Migration
             $table->double('package_height',16,2);
             $table->double('package_weight',16,2);
 
-            $table->enum('status',['Placed','Confirmed','Cancelled'])->default('Placed');
+            $table->enum('status',['Placed','Confirmed','Cancelled','Shipping','Delivered'])->default('Placed');
             $table->enum('payment_status',['Pending','Paid'])->default('Pending');
 
             $table->double('payment_delivery_charges',16,2)->nullable();
@@ -60,14 +60,10 @@ return new class extends Migration
             $table->date('pickup_date')->nullable();
             $table->enum('pickup_slot',['Morning','Afternoon','Evening'])->nullable();
             $table->enum('pickup_status',['Pending','Picked'])->default('Pending');
-            $table->foreignId('pickup_boy_id')->nullable();
-            $table->foreignId('pickup_branch_id')->nullable();
 
             $table->date('delivery_date')->nullable();
             $table->enum('delivery_slot',['Morning','Afternoon','Evening'])->nullable();
             $table->enum('delivery_status',['Pending','Delivered'])->default('Pending');
-            $table->foreignId('delivery_boy_id')->nullable();
-            $table->foreignId('delivery_branch_id')->nullable();
 
             $table->timestamps();
         });
