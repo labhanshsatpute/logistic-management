@@ -27,6 +27,7 @@ interface AdminAPI {
 
     public function handleAdminStatus(Request $request);
     public function handleBranchStatus(Request $request);
+    public function handleGetBranch();
 
 }
 
@@ -84,5 +85,33 @@ class AdminAPIController extends Controller implements AdminAPI
             $branch->update();
             return response(['message' => 'Status updated','data' => $branch],200);
         }
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Handle Get Bracnh
+    |--------------------------------------------------------------------------
+    */
+    public function handleGetBranch()
+    {
+        $branches = Branch::where('status',true)->orderBy('name')->get();
+        return response(['status' => true, 'data' => $branches],200);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Handle Test Route
+    |--------------------------------------------------------------------------
+    */
+    public function handleTestRoute(Request $request)
+    {
+        foreach (Branch::all() as $value) {
+            $branch = Branch::find($value->id);
+            if (strpos($branch->name,'Logisti')) {
+                $branch->name = str_replace('Logisticscs', 'Logistics',$branch->name);
+            }
+            $branch->update();
+        }
+        dd('Done');
     }
 }

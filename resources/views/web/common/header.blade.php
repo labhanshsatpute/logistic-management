@@ -7,9 +7,9 @@
                 </a>
                 <div class="flex items-center space-x-9">
                     <ul class="flex items-center space-x-7">
-                        <li><a href="#" class="text-sm hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">Services</a></li>
+                        <li><a href="{{route('view.services')}}" class="text-sm hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">Services</a></li>
                         <li><a href="#" class="text-sm hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">News & Media</a></li>
-                        <li><a href="#" class="text-sm hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">Careers</a></li>
+                        <li><a href="{{route('view.career')}}" class="text-sm hover:text-web-ascent duration-300 ease-in-out hover:ease-in-out">Careers</a></li>
                     </ul>
                     <a href="#">
                         <button class="btn-ascent-dark-md flex items-center justify-center">Track My Package <i data-feather="map-pin" class="h-4 w-4 ml-2"></i></button>

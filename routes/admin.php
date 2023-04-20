@@ -43,6 +43,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('/update/{id}', [AdminViewController::class, 'viewShipmentUpdate'])->name('admin.view.shipment.update');
         Route::post('/update/{id}', [AdminUpdateController::class, 'handleShipmentUpdate'])->name('admin.handle.shipment.update');
         Route::get('/delete/{id}', [AdminDeleteController::class, 'handleShipmentDelete'])->name('admin.handle.shipment.delete');
+        Route::get('/get/branch', [AdminAPIController::class, 'handleGetBranch'])->name('admin.handle.get.branch');
     });
 
 
@@ -55,5 +56,8 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('/delete/{id}', [AdminDeleteController::class, 'handleAdminDelete'])->name('admin.handle.admin.delete');
         Route::put('/status', [AdminAPIController::class, 'handleAdminStatus'])->name('admin.handle.admin.status');
     });
+
+
+    Route::get('/test', [AdminAPIController::class, 'handleTestRoute'])->name('admin.handle.test');
 
 });

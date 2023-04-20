@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('shipments', function (Blueprint $table) {
             $table->bigIncrements('id')->from(100001);
             $table->foreignId('user_id')->references('id')->on('users')->nullable();
+            $table->string('shipment_ref_id')->unique()->nullable();
 
             $table->string('sender_name');
             $table->string('sender_email');
@@ -50,7 +51,7 @@ return new class extends Migration
             $table->double('package_height',16,2);
             $table->double('package_weight',16,2);
 
-            $table->enum('status',['Placed','Confirmed','Cancelled','Shipping','Delivered'])->default('Placed');
+            $table->enum('status',['Placed','Confirmed','Picked','Cancelled','Delivered'])->default('Placed');
             $table->enum('payment_status',['Pending','Paid'])->default('Pending');
 
             $table->double('payment_delivery_charges',16,2)->nullable();
@@ -59,11 +60,9 @@ return new class extends Migration
 
             $table->date('pickup_date')->nullable();
             $table->enum('pickup_slot',['Morning','Afternoon','Evening'])->nullable();
-            $table->enum('pickup_status',['Pending','Picked'])->default('Pending');
 
             $table->date('delivery_date')->nullable();
             $table->enum('delivery_slot',['Morning','Afternoon','Evening'])->nullable();
-            $table->enum('delivery_status',['Pending','Delivered'])->default('Pending');
 
             $table->timestamps();
         });

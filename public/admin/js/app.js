@@ -19441,7 +19441,7 @@ var feather = __webpack_require__(/*! feather-icons */ "./node_modules/feather-i
 feather.replace();
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 jquery__WEBPACK_IMPORTED_MODULE_4___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_4___default()('table').DataTable({
+  jquery__WEBPACK_IMPORTED_MODULE_4___default()('table:not(.ignore)').DataTable({
     "order": [[0, "desc"]]
   });
 });

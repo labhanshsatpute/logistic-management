@@ -20,7 +20,7 @@ feather.replace();
 Alpine.start();
 
 $(document).ready( function () {
-    $('table').DataTable({ "order": [[ 0, "desc" ]], });
+    $('table:not(.ignore)').DataTable({ "order": [[ 0, "desc" ]], });
 });
 
 $('.table-dropdown button').click(function() {

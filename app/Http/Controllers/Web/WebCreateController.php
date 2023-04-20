@@ -82,6 +82,7 @@ class WebCreateController extends Controller implements WebCreate
             
             $shipment = new Shipment();
             $shipment->user_id = auth()->user()->id;
+            $shipment->shipment_ref_id = strtoupper(env('APP_SHIPMENT_ID_REF_PREFIX') .rand(111111,999999));
 
             $shipment->sender_name = $request->input('sender_name');
             $shipment->sender_email = $request->input('sender_email');

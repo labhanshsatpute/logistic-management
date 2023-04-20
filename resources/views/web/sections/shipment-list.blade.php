@@ -38,7 +38,7 @@
                 <div class="md:border sm:border-b w-full md:p-9 sm:py-5 rounded-md space-y-3">
                     <div class="space-y-2">
                         <div class="flex items-center justify-between">
-                            <h1 class="font-semibold md:text-xl sm:text-lg">Shipment ID - {{$shipment->id}}</h1>
+                            <h1 class="font-semibold md:text-xl sm:text-lg">Shipment Ref ID - {{$shipment->shipment_ref_id}}</h1>
                             
                                 @switch($shipment->status)
                                     @case('Placed')
