@@ -19,9 +19,11 @@ return new class extends Migration
             $table->foreignId('shipment_id')->references('id')->on('shipments')->nullable();
             $table->foreignId('branch_id')->references('id')->on('branches')->nullable();
 
+            $table->foreignId('pickup_branch_id')->nullable();
             $table->foreignId('pickup_boy_id')->nullable();
             $table->foreignId('pickup_otp')->nullable();
 
+            $table->foreignId('delivery_branch_id')->nullable();
             $table->foreignId('delivery_boy_id')->nullable();
             $table->foreignId('delivery_otp')->nullable();
 

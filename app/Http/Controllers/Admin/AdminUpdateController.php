@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
 use App\Models\Shipment;
+use App\Models\ShipmentRoute;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -343,6 +344,20 @@ class AdminUpdateController extends Controller implements AdminUpdate
             $result = $shipment->update();
 
             if ($result) {
+
+                foreach ($request->route_branch_id as $key => $route_branch_id) {
+                    $shipment_route = new ShipmentRoute();
+                    $shipment_route->shipment_id = $shipment->id;
+                    $shipment_route->branch_id = $route_branch_id;
+                    if ($key == 0) {
+                        $shipment_route->pickup_branch_id = $route_branch_id;
+                    }
+                    if ((count($request->route_branch_id) - 1) == $key) {
+                        $shipment_route->delivery_branch_id = $route_branch_id;
+                    }
+                    $shipment_route->save();
+                }
+
                 return redirect()->back()->with('message', [
                     'status' => 'success',
                     'title' => 'Changes Saved',
