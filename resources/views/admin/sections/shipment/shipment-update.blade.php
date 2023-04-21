@@ -480,7 +480,7 @@
                                 </div>
                             </li>
                             @endforeach
-                            <li class="tracking-progress-pointer-active last">
+                            <li class="tracking-progress-pointer-inactive last">
                                 <div class="space-y-1">
                                     <h1 class="text-sm text-gray-800 font-medium">Delivered</h1>
                                     <p class="text-xs text-gray-600">Shipment delivered on {{date('D d M Y',strtotime($shipment->created_at))}} at {{date('h:i A',strtotime($shipment->created_at))}}</p>

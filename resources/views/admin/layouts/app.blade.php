@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{-- Stylesheets --}}
-    <link rel="stylesheet" href="{{asset('admin/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/css/app.css?v=1')}}">
 
     {{-- Title --}}
     <title>Admin Panel </title>
