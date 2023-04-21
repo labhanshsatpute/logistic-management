@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
 use App\Models\Admin;
+use App\Models\Shipment;
+use App\Models\ShipmentPaymentTransaction;
+use App\Models\ShipmentRoute;
 use Storage;
 
 /*
@@ -20,6 +23,7 @@ interface AdminDelete {
 
     public function handleAdminDelete($id);
     public function handleBranchDelete($id);
+    public function handleShipmentDelete($id);
 
 }
 
@@ -71,6 +75,24 @@ class AdminDeleteController extends Controller
             'status' => 'success',
             'title' => 'Branch Deleted',
             'description' => 'The branch is successfully deleted'
+        ]);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Handle Shipment Delete
+    |--------------------------------------------------------------------------
+    */
+    public function handleShipmentDelete($id)
+    {
+        $shipment = Shipment::find($id);
+        $shipment_route = ShipmentRoute::where('shipment_id',$shipment->id)->delete();
+        $shipment_payment = ShipmentPaymentTransaction::where('shipment_id',$shipment->id)->delete();
+        $shipment->delete();
+        return redirect()->route('admin.view.shipment.list')->with('message',[
+            'status' => 'success',
+            'title' => 'Shipment Deleted',
+            'description' => 'The shipment is successfully deleted'
         ]);
     }
     
