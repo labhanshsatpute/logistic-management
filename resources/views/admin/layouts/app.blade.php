@@ -36,7 +36,6 @@
                         @yield('panel-header')
                     </div>
                     <div class="flex md:space-x-5 sm:space-x-3">
-                        @include('admin.common.notification-dropdown')
                         @include('admin.common.profile-dropdown')
                     </div>
                 </header>

@@ -417,3 +417,17 @@ table.dataTable thead th, table.dataTable thead td {
 #DataTables_Table_0_wrapper table {
     @apply col-span-2
 }
+
+ul .tracking-progress-pointer-inactive {
+    @apply border-l-slate-400 border-l-4 pl-6 relative after:content-['_'] after:absolute after:h-4 after:w-4 after:bg-slate-400 after:left-[-10px] after:top-0 after:rounded-full after:ring-2 after:ring-slate-500 after:ring-offset-2 pb-5
+}
+
+ul .tracking-progress-pointer-active {
+    @apply border-l-green-600 border-l-4 pl-6 relative after:content-['_'] after:absolute after:h-4 after:w-4 after:bg-green-500 after:left-[-10px] after:top-0 after:rounded-full after:ring-2 after:ring-green-600 after:ring-offset-2 pb-5
+}
+ul .tracking-progress-pointer-inactive.last {
+    @apply pl-6 relative after:content-['_'] after:absolute after:h-4 after:w-4 after:bg-green-500 after:left-[-10px] after:top-0 after:rounded-full after:ring-2 after:ring-green-600 after:ring-offset-2 pb-0
+}
+ul .tracking-progress-pointer-active.last {
+    @apply border-l-0 pl-6 relative after:content-['_'] after:absolute after:h-4 after:w-4 after:bg-green-500 after:left-[-5.5px] after:top-0 after:rounded-full after:ring-2 after:ring-green-600 after:ring-offset-2 pb-0
+}

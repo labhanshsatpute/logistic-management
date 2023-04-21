@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Branch;
 use App\Models\Shipment;
+use App\Models\ShipmentRoute;
 
 interface AdminView {
 
@@ -40,7 +41,10 @@ class AdminViewController extends Controller implements AdminView
     /** View Dashboard **/
     public function viewDashboard()
     {
-        return view('admin.sections.dashboard');
+        $pending_shipments = Shipment::where('status','Placed')->get();
+        return view('admin.sections.dashboard',[
+            'pending_shipments' => $pending_shipments
+        ]);
     }
 
     /** View Setting **/
@@ -116,8 +120,12 @@ class AdminViewController extends Controller implements AdminView
     public function viewShipmentUpdate($id)
     {
         $shipment = Shipment::find($id);
+
+        $shipment_routes = ShipmentRoute::where('shipment_id', $shipment->id)->orderBy('id','ASC')->get();
+
         return view('admin.sections.shipment.shipment-update',[
-            'shipment' => $shipment
+            'shipment' => $shipment,
+            'shipment_routes' => $shipment_routes
         ]);
     }
 

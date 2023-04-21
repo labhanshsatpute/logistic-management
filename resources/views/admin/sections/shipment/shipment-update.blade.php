@@ -439,6 +439,7 @@
                 <div class="grid md:grid-cols-4 sm:grid-cols-1 md:gap-7 sm:gap-5">
 
                     {{-- Branches --}}
+                    @if (count($shipment_routes) == 0)
                     <div class="flex flex-col md:col-span-2 sm:col-span-1">
                         <div class="space-y-2">
                             <div class="space-y-2" id="route-branch-id-inputs">
@@ -451,6 +452,44 @@
                             <span class="input-error">{{ $message }}</span>
                         @enderror
                     </div>
+                    @else 
+                    <div class="flex flex-col md:col-span-2 sm:col-span-1">
+                        <ul class="pl-3">
+                            <li class="tracking-progress-pointer-active">
+                                <div class="space-y-1">
+                                    <h1 class="text-sm text-gray-800 font-medium">Shipment Booked</h1>
+                                    <p class="text-xs text-gray-600">Booked by the user on {{date('D d M Y',strtotime($shipment->created_at))}} at {{date('h:i A',strtotime($shipment->created_at))}}</p>
+                                </div>
+                            </li>
+                            @foreach ($shipment_routes as $shipment_route)
+                            <li class="tracking-progress-pointer-{{$shipment_route->recieved_by_branch ? 'active' : 'inactive'}}">
+                                <div class="space-y-1">
+                                    <h1 class="text-sm text-gray-800 font-medium">Arived at {{DB::table('branches')->find($shipment_route->branch_id)?->name}} 
+                                    @switch(DB::table('branches')->find($shipment_route->branch_id)?->type)
+                                        @case('City Office')
+                                            Office
+                                            @break
+                                        @case('Regional Warehouse')
+                                            Warehouse
+                                            @break
+                                        @case('Head Office')
+                                            Office
+                                            @break
+                                    @endswitch</h1>
+                                    <p class="text-xs text-gray-600">At {{date('D d M Y')}} at {{date('h:i A')}}</p>
+                                </div>
+                            </li>
+                            @endforeach
+                            <li class="tracking-progress-pointer-active last">
+                                <div class="space-y-1">
+                                    <h1 class="text-sm text-gray-800 font-medium">Delivered</h1>
+                                    <p class="text-xs text-gray-600">Shipment delivered on {{date('D d M Y',strtotime($shipment->created_at))}} at {{date('h:i A',strtotime($shipment->created_at))}}</p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    @endif
 
                 </div>
             </div>
@@ -620,7 +659,11 @@
             remove.onclick = (event) => {
                 event.target.parentNode.remove();
             }
+
+            setTimeout(() => {
+                
             parentDiv.append(branchSelect, remove);
+            }, 200);
             document.getElementById('route-branch-id-inputs').appendChild(parentDiv);
         }
     </script>

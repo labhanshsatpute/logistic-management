@@ -58,12 +58,12 @@
                     <i data-feather="settings" class="mr-2 h-5 w-5"></i> Account Settings
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="#"
                     class="text-sm font-medium text-slate-800 hover:text-admin-ascent-dark whitespace-nowrap flex items-center justify-start">
                     <i data-feather="headphones" class="mr-2 h-5 w-5"></i> Customer Support
                 </a>
-            </li>
+            </li> --}}
             <li>
                 <a href="javascript:handleLogout();"
                     class="text-sm font-medium text-slate-800 hover:text-admin-ascent-dark whitespace-nowrap flex items-center justify-start">

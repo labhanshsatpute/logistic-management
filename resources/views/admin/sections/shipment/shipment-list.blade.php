@@ -18,9 +18,6 @@
                 <h1 class="panel-card-title">All Shipments</h1>
                 <p class="panel-card-description">All shipments listed in website </p>
             </div>
-            <div>
-                <a href="{{ route('admin.view.branch.create') }}" class="btn-primary-md">Add Branch</a>
-            </div>
         </div>
         <div class="panel-card-body">
             <div class="panel-card-table">

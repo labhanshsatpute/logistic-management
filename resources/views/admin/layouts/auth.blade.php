@@ -21,7 +21,7 @@
 
     {{-- Main (Start) --}}
     <main class="h-auto w-full bg-slate-200">
-        <section class="h-[100vh] w-full flex justify-center items-center">
+        <section class="h-[113vh] w-full flex justify-center items-center">
 
             <div class="md:w-1/4">
                 @yield('auth-card')
