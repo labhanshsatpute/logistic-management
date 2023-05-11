@@ -1,22 +1,16 @@
+on: push
 name: Deploy
-
-on: [push]
-
 jobs:
-  Upload-to-SFTP:
+  web-deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch Updated Code
-        uses: actions/checkout@v2
-
-      - name: Deploy Code
-        uses: wangyucode/sftp-upload-action@v1.4.8
-        with:
-          host: ${{ secrets.FTP_SERVER }}         
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          dryRun: false
-          forceUpload: true 
-          localDir: './'
-          remoteDir: '/var/www/logistic-management.labhansh.in//public_html'
-          exclude: '.git*,.DS_Store'
+    - name: Fetch Latest Code
+      uses: actions/checkout@v2
+    
+    - name: Sync Files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
